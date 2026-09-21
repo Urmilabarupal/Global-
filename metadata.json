@@ -1,0 +1,6 @@
+{
+  "name": "Global Coaching Classes & Computer Education Anupgarh",
+  "description": "Official portal of Global Coaching Classes & Computer Education, Anupgarh. Premier coaching institute for CET, REET, RAS, SSC, Police, Railway and Computer courses under Director Balram Nokhwal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

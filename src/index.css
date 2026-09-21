@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Poppins', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-hindi: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+  --font-sanskrit: 'Tiro Devanagari Hindi', 'Noto Sans Devanagari', serif;
+
+  --color-brand-blue: #0c2b5e;
+  --color-brand-navy: #071c3d;
+  --color-brand-blue-dark: #05142b;
+  --color-brand-blue-light: #164282;
+  --color-brand-yellow: #ffc700;
+  --color-brand-yellow-dark: #e5b000;
+  --color-brand-red: #dc2626;
+  --color-brand-red-dark: #b91c1c;
+  --color-brand-green: #15803d;
+  --color-brand-orange: #ea580c;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1e293b;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+}
+
+.font-hindi {
+  font-family: var(--font-hindi);
+}
+
+.font-sanskrit {
+  font-family: var(--font-sanskrit);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Indian Coaching Institute Poster Stencil Badge Effect */
+.poster-brush-badge {
+  position: relative;
+  background: #dc2626;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+  clip-path: polygon(3% 0%, 97% 2%, 100% 98%, 1% 96%);
+}
+
+/* Continuous Auto-Scrolling Ticker / Marquee */
+@keyframes ticker-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-ticker {
+  display: inline-flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: ticker-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
