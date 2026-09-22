@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, MessageCircle, Sparkles, UserCheck, Shield, Instagram } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle, UserCheck } from 'lucide-react';
 import { InstituteLogo } from './InstituteLogo';
 
 interface NavbarProps {
@@ -93,57 +93,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Right Action Buttons */}
         <div className="hidden xl:flex items-center gap-2 shrink-0">
-          {/* Instagram Reel Link */}
-          <a
-            href="https://www.instagram.com/balramnokhwal/"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-1.5 text-xs text-pink-600 hover:text-pink-700 bg-pink-50/70 hover:bg-pink-100/80 px-2.5 py-1.5 rounded-lg transition border border-pink-200 font-bold"
-            title="Director Balram Nokhwal Instagram Reels"
-          >
-            <Instagram className="w-3.5 h-3.5 text-pink-600" />
-            <span className="hidden lg:inline">Reels</span>
-          </a>
-
-          {/* Admin link button */}
-          <button
-            onClick={onOpenAdmin}
-            className="flex items-center gap-1.5 text-xs text-slate-600 hover:text-[#0c2b5e] px-2.5 py-1.5 rounded-lg hover:bg-slate-100 transition border border-slate-200"
-            title="Admin Management Portal"
-            id="navbar-admin-btn"
-          >
-            <Shield className="w-3.5 h-3.5 text-slate-500" />
-            <span>Admin</span>
-            {isAdminLoggedIn && (
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            )}
-          </button>
-
-          {/* Admission Open Highlight CTA */}
-          <button
-            onClick={onOpenAdmission}
-            className="relative group overflow-hidden bg-[#dc2626] hover:bg-[#b91c1c] text-white px-3.5 py-2 rounded-lg text-xs sm:text-sm font-bold shadow-sm hover:shadow-md transition flex items-center gap-1.5"
-            id="navbar-admission-open-btn"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-300 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-300"></span>
-            </span>
-            <span className="tracking-wide">Admissions Open</span>
-          </button>
         </div>
 
         {/* Mobile Compact Controls */}
         <div className="flex md:hidden items-center gap-1.5 shrink-0">
-          <button
-            onClick={onOpenAdmission}
-            className="bg-gradient-to-r from-[#dc2626] to-[#b91c1c] text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md flex items-center gap-1 shadow-xs active:scale-95 transition"
-            id="navbar-mobile-admission-btn"
-          >
-            <Sparkles className="w-2.5 h-2.5 text-amber-300" />
-            <span>Admissions</span>
-          </button>
-          
+
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-1 text-slate-700 hover:text-[#0c2b5e] rounded-md hover:bg-slate-100 focus:outline-none transition active:scale-95"
@@ -162,13 +116,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider">
               Navigation Menu
             </span>
-            <button
-              onClick={onOpenAdmin}
-              className="text-[11px] text-[#0c2b5e] font-bold flex items-center gap-1 bg-blue-50 px-2 py-1 rounded border border-blue-200"
-            >
-              <Shield className="w-3 h-3" />
-              <span>Admin Portal</span>
-            </button>
           </div>
 
           <div className="grid grid-cols-2 gap-1 py-2">
@@ -188,17 +135,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           <div className="pt-2 border-t border-slate-100 flex flex-col gap-1.5">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenAdmission();
-              }}
-              className="w-full bg-[#ffc700] hover:bg-amber-400 text-[#071c3d] font-extrabold py-2 rounded-xl text-center shadow text-xs flex items-center justify-center gap-1.5"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#071c3d]" />
-              <span>Submit Admission Form Online</span>
-            </button>
-
             <div className="grid grid-cols-2 gap-2 mt-0.5">
               <a 
                 href="tel:9413094840" 
