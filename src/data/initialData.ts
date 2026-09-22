@@ -2,19 +2,19 @@ import { Course, FacultyMember, NoticeItem, ResultItem, GalleryItem, InstituteSe
 
 export const INITIAL_SETTINGS: InstituteSettings = {
   name: "Global Coaching Classes & Computer Education",
-  hindiName: "ग्लोबल कोचिंग क्लासेज & कंप्यूटर एजुकेशन, अनूपगढ़",
-  tagline: "ज्ञानम् परमं भूषणम् (Knowledge is the Supreme Ornament)",
-  directorName: "बलराम नोखवाल",
+  hindiName: "Global Coaching Classes & Computer Education, Anupgarh",
+  tagline: "Knowledge is the Supreme Ornament",
+  directorName: "Balram Nokhwal",
   primaryPhone1: "94130-94840",
   primaryPhone2: "95094-46840",
   whatsappNumber: "9413094840",
-  addressHindi: "गवर्नमेंट हॉस्पिटल के सामने, मेडिकल के पीछे, गणेश मंदिर के पास, दशहरा ग्राउंड के सामने, अनूपगढ़",
+  addressHindi: "Opposite Government Hospital, Behind Medical Store, Near Ganesh Mandir, Opposite Dussehra Ground, Anupgarh",
   addressEnglish: "Opposite Government Hospital, Behind Medical Store, Near Ganesh Mandir, Opposite Dussehra Ground, Anupgarh (Raj.) - 335701",
-  newBatchDay: "सोमवार (Monday)",
-  newBatchTime: "प्रातः 9:00 बजे से (9:00 AM)",
-  testSeriesDays: "प्रत्येक सोमवार एवं बुधवार (Monday & Wednesday)",
+  newBatchDay: "Monday",
+  newBatchTime: "From 9:00 AM",
+  testSeriesDays: "Every Monday & Wednesday",
   youtubeUrl: "https://www.youtube.com/@balramnokhwal",
-  instagramUrl: "https://www.instagram.com/balramaph7",
+  instagramUrl: "https://www.instagram.com/balramnokhwal",
   telegramUrl: "https://t.me/globalcoachinganupgarh",
 };
 
@@ -38,31 +38,31 @@ export const INITIAL_COURSES: Course[] = [
       "Comprehensive Printed & Handwritten Study Modules"
     ],
     subjects: [
-      "राजस्थान का सामान्य ज्ञान (इतिहास, कला-संस्कृति, भूगोल, राजव्यवस्था)",
-      "दैनिक विज्ञान (General Science)",
-      "तार्किक योग्यता एवं मानसिक क्षमता (Reasoning)",
-      "प्रारंभिक गणित (Mathematics)",
-      "सामान्य हिन्दी व्याकरण (General Hindi)",
+      "Rajasthan General Knowledge (History, Art-Culture, Geography, Polity)",
+      "Everyday Science (General Science)",
+      "Logical Reasoning & Mental Ability",
+      "Elementary Mathematics",
+      "General Hindi Grammar",
       "General English",
-      "कम्प्यूटर ज्ञान एवं सूचना प्रौद्योगिकी (Computer & IT)",
-      "समसामयिक घटनाएं (Current Affairs)"
+      "Computer Knowledge & Information Technology",
+      "Current Affairs & State Updates"
     ],
     preparationModes: [
-      "प्रतिदिन 4-5 घंटे विषय विशेषज्ञ अध्यापकों द्वारा कक्षाएं",
-      "प्रत्येक सोमवार एवं बुधवार OMR शीट आधारित टेस्ट सीरीज",
-      "100% सिलेबस अनुरूप प्रिंटेड व हस्तलिखित नोट्स",
-      "विगत वर्षों के प्रश्न पत्रों (PYQs) का विस्तृत समाधान",
-      "कमजोर छात्रों हेतु विशेष डाउट काउंटर व मार्गदर्शन",
-      "3 दिन की पूर्णतः निःशुल्क डेमो कक्षाएं"
+      "Daily 4-5 hours structured classes by expert subject teachers",
+      "Every Monday & Wednesday OMR sheet-based test series",
+      "100% syllabus-aligned printed and handwritten study material",
+      "Detailed analysis and solutions of previous years' question papers (PYQs)",
+      "Dedicated doubt counter and personalized mentorship for students",
+      "3-day completely free demo classes for newly enrolled students"
     ],
     syllabusHighlights: [
-      "राजस्थान इतिहास, कला, संस्कृति, साहित्य, परंपराएं व विरासत",
-      "भारत एवं राजस्थान का भूगोल, जलवायु, नदियां व वनस्पति",
-      "भारतीय संविधान की प्रकृति, मौलिक अधिकार, नीति निदेशक तत्व व राजस्थान की प्रशासनिक व्यवस्था",
-      "दैनिक विज्ञान: भौतिक एवं रासायनिक परिवर्तन, धातु-अधातु, मानव शरीर व आनुवंशिकी",
-      "तार्किक विवेचन एवं विश्लेषणात्मक योग्यता (Reasoning Shortcuts)",
-      "संख्या पद्धति, प्रतिशत, लाभ-हानि, साधारण व चक्रवृद्धि ब्याज, समय-दूरी",
-      "संधि, समास, उपसर्ग, प्रत्यय, पर्यायवाची, विलोम, शब्द व वाक्य शुद्धि",
+      "Rajasthan History, Art, Culture, Literature, Traditions & Heritage",
+      "Geography of India & Rajasthan, Climate, Rivers & Natural Vegetation",
+      "Indian Constitution, Fundamental Rights, Directive Principles & Rajasthan Administrative System",
+      "General Science: Physical & Chemical Changes, Metals & Non-metals, Human Anatomy & Genetics",
+      "Logical Reasoning & Analytical Ability (Shortcut Techniques)",
+      "Number System, Percentage, Profit & Loss, Simple & Compound Interest, Time & Distance",
+      "Sandhi, Samas, Prefix, Suffix, Synonyms, Antonyms, Word & Sentence Correction",
       "Tenses, Voice, Narration, Articles, Prepositions & Technical Glossary"
     ]
   },
@@ -540,100 +540,82 @@ export const INITIAL_FACULTY: FacultyMember[] = [
   {
     id: "director-balram",
     name: "Balram Nokhwal",
-    role: "Founder & Director",
+    role: "Founder & Managing Director",
     subject: "Competitive Exam Mentor & GS Specialist",
     experience: "10+ Years Teaching Experience",
     qualification: "M.A., B.Ed, UGC-NET Qualified",
-    bio: "Renowned mentor and educator who has guided hundreds of aspirants from Anupgarh into government service. Acclaimed for disciplined pedagogy and precise exam trend analysis.",
-    photoUrl: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80",
+    bio: "Renowned mentor and educator in Anupgarh who has guided hundreds of rural and urban aspirants into government services. Known for disciplined teaching, individual doubt guidance, and comprehensive test series.",
+    photoUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=85",
     isDirector: true
-  },
-  {
-    id: "faculty-rajasthan-gk",
-    name: "Senior Faculty (Rajasthan GK)",
-    role: "Subject Faculty",
-    subject: "Rajasthan History, Art, Culture & Geography",
-    experience: "8+ Years Experience",
-    qualification: "M.A. History, B.Ed",
-    bio: "Expert in teaching complete Rajasthan general knowledge through structured maps, mnemonics, and memorable shortcut concepts.",
-    photoUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80"
-  },
-  {
-    id: "faculty-maths-reasoning",
-    name: "Quantitative Math & Reasoning Specialist",
-    role: "Subject Faculty",
-    subject: "Mathematics & Mental Ability",
-    experience: "7+ Years Experience",
-    qualification: "M.Sc. Mathematics",
-    bio: "Specialist in zero-formula shortcut techniques that help aspirants solve complex arithmetic and reasoning problems in under 30 seconds for SSC, Railway, and CET.",
-    photoUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80"
-  },
-  {
-    id: "faculty-hindi-grammar",
-    name: "Hindi Grammar & Pedagogy Specialist",
-    role: "Subject Faculty",
-    subject: "General Hindi & Language Teaching Methods",
-    experience: "9+ Years Experience",
-    qualification: "M.A. Hindi, Ph.D. Scholar",
-    bio: "Flawless command over Hindi grammar rules, syntax corrections, vocabulary, and teaching methodologies for REET, Sub-Inspector, and High Court LDC.",
-    photoUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=80"
-  },
-  {
-    id: "faculty-computer-education",
-    name: "Computer Education & Typing Instructor",
-    role: "Computer Faculty",
-    subject: "RS-CIT, MS Office & High Court Typing",
-    experience: "6+ Years Experience",
-    qualification: "MCA, RKCL Certified Trainer",
-    bio: "Proven track record of guiding students to 90%+ scores in RS-CIT and achieving 40+ WPM typing speed for High Court and RSMSSB examinations.",
-    photoUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=80"
   }
 ];
 
 export const INITIAL_RESULTS: ResultItem[] = [
   {
     id: "res-1",
-    studentName: "Verified Selected Aspirant",
-    exam: "REET Level-1 Teacher Recruitment",
+    studentName: "Rahul Godara",
+    exam: "Rajasthan Police Constable",
     year: "2024",
-    result: "Final Selection (Appointed Teacher)",
-    rank: "Merit List Qualified",
-    rollNumber: "REET-784***12",
+    result: "Final Selection (Appointed Constable)",
+    rank: "Bikaner Range Selection",
+    rollNumber: "RP-445892",
     verified: true,
-    photoUrl: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&auto=format&fit=crop&q=80"
+    photoUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80"
   },
   {
     id: "res-2",
-    studentName: "Verified Selected Aspirant",
-    exam: "CET (Senior Secondary Level)",
+    studentName: "Pooja Sharma",
+    exam: "REET Level-1 Teacher Recruitment",
     year: "2024",
-    result: "Score: 218 / 300 Marks",
-    rank: "Top 1% Percentile",
-    rollNumber: "CET-902***44",
+    result: "Final Selection (Primary Teacher)",
+    rank: "State Merit Selected",
+    rollNumber: "REET-784112",
     verified: true,
-    photoUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80"
+    photoUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80"
   },
   {
     id: "res-3",
-    studentName: "Verified Selected Aspirant",
-    exam: "Rajasthan Police Constable",
-    year: "2023",
-    result: "Final Selection (Appointed Constable)",
-    rank: "Anupgarh District / Bikaner Range",
-    rollNumber: "RP-445***89",
+    studentName: "Suresh Kumar Bishnoi",
+    exam: "CET (Senior Secondary Level)",
+    year: "2024",
+    result: "Score: 224 / 300 Marks",
+    rank: "Top 1% Percentile",
+    rollNumber: "CET-902441",
     verified: true,
-    photoUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=80"
+    photoUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80"
   },
   {
     id: "res-4",
-    studentName: "Verified Selected Aspirant",
+    studentName: "Priyanka Meena",
     exam: "Rajasthan Patwari Direct Recruitment",
-    year: "2023",
+    year: "2023-24",
     result: "Final Selection (Appointed Patwari)",
-    rank: "State Merit Selected",
-    rollNumber: "PAT-332***11",
+    rank: "District Allotment: Anupgarh / Sri Ganganagar",
+    rollNumber: "PAT-332118",
     verified: true,
-    photoUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&auto=format&fit=crop&q=80"
+    photoUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    id: "res-5",
+    studentName: "Vikas Kaswan",
+    exam: "SSC GD Constable",
+    year: "2024",
+    result: "Final Selection (CRPF Allocation)",
+    rank: "All India Rank Qualified",
+    rollNumber: "SSC-810492",
+    verified: true,
+    photoUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    id: "res-6",
+    studentName: "Anjali Verma",
+    exam: "RS-CIT & High Court LDC Typing",
+    year: "2024",
+    result: "RKCL 94% Distinction (Typing 42 WPM)",
+    rank: "Distinction Holder",
+    rollNumber: "RSCIT-55102",
+    verified: true,
+    photoUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80"
   }
 ];
 
@@ -643,7 +625,7 @@ export const INITIAL_GALLERY: GalleryItem[] = [
     title: "Focused Classroom Learning Session",
     category: "Classroom",
     caption: "Aspirants preparing for competitive examinations in our quiet, disciplined, air-cooled classrooms.",
-    imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&auto=format&fit=crop&q=80",
     date: "Sep 2026"
   },
   {
@@ -651,15 +633,15 @@ export const INITIAL_GALLERY: GalleryItem[] = [
     title: "Special Guest Visit: Naresh Kumar SI (CRPF)",
     category: "Events",
     caption: "Warm felicitation and motivational guidance session for students on the visit of Naresh Kumar SI (CRPF) to Global Coaching Classes & Computer Education.",
-    imageUrl: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=800&auto=format&fit=crop&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=800&auto=format&fit=crop&q=80",
     date: "Aug 2026"
   },
   {
     id: "gal-3",
-    title: "Global Coaching Classes Campus & Flag Hoisting",
+    title: "Global Coaching Classes Campus & Academic Assembly",
     category: "Institute Building",
-    caption: "National Independence Day flag hoisting ceremony and staff-student assembly at the Anupgarh campus.",
-    imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&auto=format&fit=crop&q=80",
+    caption: "Independence Day flag hoisting ceremony and motivational assembly at the Anupgarh campus.",
+    imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop&q=80",
     date: "15 Aug 2026"
   },
   {
@@ -682,8 +664,8 @@ export const INITIAL_GALLERY: GalleryItem[] = [
     id: "gal-6",
     title: "Felicitation Ceremony for Selected Students",
     category: "Celebrations",
-    caption: "Successful candidates who cleared government exams honored and felicitated by Director Balram Nokhwal.",
-    imageUrl: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop&q=80",
+    caption: "Successful candidates who cleared Rajasthan Police, REET, and CET honored and felicitated by Director Balram Nokhwal.",
+    imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
     date: "Jun 2026"
   }
 ];

@@ -58,7 +58,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 </div>
                 <div>
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Institute Director</div>
-                  <div className="text-base font-black text-[#0c2b5e]">{settings.directorName}</div>
+                  <div className="text-base font-black text-[#0c2b5e]">Balram Nokhwal</div>
                 </div>
               </div>
             </div>

@@ -18,7 +18,9 @@ import {
   ClipboardCheck,
   Video,
   Monitor,
-  Check
+  Check,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { 
   POSTER_EXAM_PREPARATIONS, 
@@ -29,9 +31,13 @@ import {
 
 interface ExamPreparationProps {
   onExamClick: (examName: string) => void;
+  onViewCourseDetail?: (courseId: string) => void;
 }
 
-export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick }) => {
+export const ExamPreparation: React.FC<ExamPreparationProps> = ({ 
+  onExamClick,
+  onViewCourseDetail 
+}) => {
   const [selectedStreamId, setSelectedStreamId] = useState<string>('cet');
   const [expandedSubjectIndex, setExpandedSubjectIndex] = useState<number | null>(0);
 
@@ -42,16 +48,16 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
     {
       id: "cet",
       name: "CET",
-      fullName: "Common Eligibility Test (12वीं व स्नातक स्तर)",
-      desc: "राजस्थान सरकार की कनिष्ठ सहायक, पुलिस, पटवारी, वनरक्षक आदि भर्तियों का मुख्य अनिवार्य आधार।",
+      fullName: "Common Eligibility Test (12th & Graduate Level)",
+      desc: "Essential qualification gateway for Junior Assistant, Police, Patwari, Forester, and State clerical recruitments.",
       icon: FileText,
       accent: "text-orange-600 bg-orange-50 border-orange-200"
     },
     {
       id: "reet",
       name: "REET",
-      fullName: "अध्यापक पात्रता परीक्षा (Level-1 व Level-2 + Mains)",
-      desc: "शिक्षा मनोविज्ञान, शिक्षण विधियां, संस्कृत, हिन्दी, SST, विज्ञान व गणित की प्रामाणिक तैयारी।",
+      fullName: "Teacher Eligibility Test (Level-1 & Level-2 + Mains)",
+      desc: "In-depth pedagogy, educational psychology, Sanskrit, Hindi, Social Studies, Science, and Mathematics.",
       icon: BookOpen,
       accent: "text-emerald-700 bg-emerald-50 border-emerald-200"
     },
@@ -59,23 +65,23 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
       id: "ssc",
       name: "SSC",
       fullName: "SSC GD, CGL, CHSL, MTS",
-      desc: "शॉर्टकट ट्रिक्स आधारित गणित, रीजनिंग, स्टैटिक जीके एवं जीडी कॉन्स्टेबल फिजिकल मार्गदर्शन।",
+      desc: "Shortcut calculation techniques for Quantitative Aptitude, Logical Reasoning, Static GK, and GD Physical guidance.",
       icon: Award,
       accent: "text-rose-700 bg-rose-50 border-rose-200"
     },
     {
       id: "computer",
       name: "RS-CIT & Typing",
-      fullName: "कम्प्यूटर एजुकेशन (RKCL Authorized)",
-      desc: "सभी सरकारी नौकरियों हेतु मान्य RS-CIT डिप्लोमा एवं हाई कोर्ट/LDC हेतु हिन्दी व अंग्रेजी टाइपिंग।",
+      fullName: "Computer Education (RKCL Authorized)",
+      desc: "Recognized RS-CIT diploma for government jobs along with High Court/LDC Hindi & English typing masterclasses.",
       icon: Monitor,
       accent: "text-teal-700 bg-teal-50 border-teal-200"
     },
     {
       id: "police",
       name: "Rajasthan & Delhi Police",
-      fullName: "कॉन्स्टेबल एवं सब-इंस्पेक्टर (SI)",
-      desc: "रीजनिंग, कम्प्यूटर, महिला एवं बाल अपराध कानून, राजस्थान जीके एवं फिजिकल टेस्ट टिप्स।",
+      fullName: "Constable & Sub-Inspector (SI)",
+      desc: "Reasoning, computer basics, women & child safety laws, Rajasthan GK, and physical fitness coaching.",
       icon: Shield,
       accent: "text-blue-700 bg-blue-50 border-blue-200"
     },
@@ -83,23 +89,23 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
       id: "railway",
       name: "Railway",
       fullName: "RRB NTPC, Group D, ALP & RPF",
-      desc: "रेलवे भर्ती बोर्ड परीक्षाओं हेतु सामान्य विज्ञान, अंकगणित एवं ऑनलाइन CBT मॉक टेस्ट अभ्यास।",
+      desc: "General science, arithmetic calculations, technical reasoning, and online CBT mock exam practice.",
       icon: Train,
       accent: "text-indigo-700 bg-indigo-50 border-indigo-200"
     },
     {
       id: "patwari",
       name: "Patwari & VDO",
-      fullName: "राजस्व पटवारी एवं ग्राम विकास अधिकारी",
-      desc: "पंचायती राज व्यवस्था, ग्रामीण विकास योजनाएं, राजस्थान प्रशासनिक ढांचा व गणित/रीजनिंग।",
+      fullName: "Revenue Patwari & Village Development Officer",
+      desc: "Panchayati Raj administration, rural schemes, Rajasthan administrative structure, and mental ability.",
       icon: Users,
       accent: "text-amber-800 bg-amber-50 border-amber-200"
     },
     {
       id: "defence",
       name: "Defence & Agniveer",
-      fullName: "आर्मी अग्निवीर GD, क्लर्क व एयरफोर्स",
-      desc: "अनुशासित अध्ययन कार्यक्रम, मॉडल टेस्ट पेपर्स एवं फिजिकल फिटनेस व दौड़ रणनीति।",
+      fullName: "Army Agniveer GD, Clerk, Technical & Airforce",
+      desc: "Disciplined study curriculum, daily physical fitness drills, model test papers, and speed endurance training.",
       icon: Shield,
       accent: "text-green-800 bg-green-50 border-green-200"
     }
@@ -113,16 +119,16 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 bg-[#ffc700]/20 text-[#071c3d] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider mb-3 border border-[#ffc700]/40">
             <Sparkles className="w-4 h-4 text-[#ffc700]" />
-            <span>पोस्टर अनुसार सम्पूर्ण विषय व तैयारी का प्रारूप</span>
+            <span>Comprehensive Syllabus & Preparation Framework</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0c2b5e] tracking-tight">
-            विषयवार तैयारी एवं कोचिंग सुविधाएं
+            Subject-Wise Preparation & Coaching Facilities
           </h2>
           <div className="w-24 h-1.5 bg-[#ffc700] mx-auto mt-3 rounded-full" />
 
           <p className="mt-4 text-slate-700 text-base sm:text-lg">
-            ग्लोबल कोचिंग क्लासेज, अनूपगढ़ में पोस्टर के अनुसार संचालित प्रमुख विषय, तैयारी के प्रकार एवं विशेष सुविधाएं।
+            Major academic streams, structured preparation methodologies, and premier coaching amenities at Global Coaching Classes, Anupgarh.
           </p>
         </div>
 
@@ -133,14 +139,14 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
                 <div>
                   <span className="bg-[#ffc700] text-[#071c3d] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
-                    संस्थान की 5 प्रमुख विशेषताएं
+                    5 Core Institute Highlights
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black mt-2 text-white">
-                    पोस्टर में उल्लिखित 5 विशेष सुविधाएं
+                    Verified Facilities & Academic Features
                   </h3>
                 </div>
                 <div className="text-xs sm:text-sm font-semibold text-amber-300 bg-white/10 px-4 py-2 rounded-2xl border border-white/10 backdrop-blur-sm self-start md:self-auto">
-                  नया बैच: सोमवार से प्रातः 9:00 बजे
+                  New Batch: Every Monday from 9:00 AM
                 </div>
               </div>
 
@@ -189,19 +195,19 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
             <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
               <div>
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">
-                  पोस्टर अनुसार मुख्य कोर्स
+                  Core Career Streams
                 </span>
                 <h3 className="text-xl sm:text-2xl font-black text-white">
-                  कोर्स चुनें और विषय व तैयारी का प्रकार देखें
+                  Select a Course to View Subjects & Preparation Strategy
                 </h3>
               </div>
               <div className="text-xs font-bold text-slate-300 bg-white/10 px-3 py-1.5 rounded-xl">
-                प्रत्येक सोमवार व बुधवार टेस्ट सीरीज
+                Every Monday & Wednesday Test Series
               </div>
             </div>
 
             {/* Stream Selector Buttons */}
-            <div className="flex flex-wrap gap-2 pt-1">
+            <div className="flex items-center gap-2 pt-1 overflow-x-auto pb-2 scrollbar-none sm:flex-wrap">
               {POSTER_EXAM_PREPARATIONS.map((stream) => {
                 const isActive = selectedStreamId === stream.id;
                 return (
@@ -211,9 +217,9 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
                       setSelectedStreamId(stream.id);
                       setExpandedSubjectIndex(0);
                     }}
-                    className={`px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm transition flex items-center gap-2 ${
+                    className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-black text-xs sm:text-sm transition flex items-center gap-1.5 sm:gap-2 flex-shrink-0 min-h-[40px] ${
                       isActive 
-                        ? 'bg-[#ffc700] text-[#071c3d] shadow-lg scale-105' 
+                        ? 'bg-[#ffc700] text-[#071c3d] shadow-lg scale-100 sm:scale-105' 
                         : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
                     }`}
                   >
@@ -226,83 +232,83 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
           </div>
 
           {/* Active Stream Content */}
-          <div className="p-5 sm:p-8">
+          <div className="p-4 sm:p-6 md:p-8">
             
             {/* Stream Summary Banner */}
-            <div className="bg-blue-50/70 border border-blue-200 rounded-2xl p-5 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div>
+            <div className="bg-blue-50/70 border border-blue-200 rounded-2xl p-4 sm:p-5 mb-6 sm:mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="min-w-0 flex-1">
                 <div className="inline-block bg-[#0c2b5e] text-white text-[11px] font-black px-2.5 py-0.5 rounded uppercase mb-1.5">
                   {activeStream.badge}
                 </div>
-                <h4 className="text-2xl font-black text-[#0c2b5e]">
+                <h4 className="text-xl sm:text-2xl font-black text-[#0c2b5e] break-words">
                   {activeStream.nameHindi}
                 </h4>
-                <p className="text-sm text-slate-700 font-medium mt-1">
+                <p className="text-xs sm:text-sm text-slate-700 font-medium mt-1">
                   {activeStream.slogan}
                 </p>
-                <div className="flex flex-wrap gap-4 mt-3 text-xs text-slate-600 font-semibold">
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-blue-600" />
-                    अवधि: {activeStream.duration}
+                <div className="flex flex-wrap gap-2 sm:gap-4 mt-3 text-xs text-slate-600 font-semibold">
+                  <span className="flex items-center gap-1.5 bg-white/70 px-2.5 py-1 rounded-lg border border-blue-100">
+                    <Clock className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
+                    <span>Duration: {activeStream.duration}</span>
                   </span>
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-amber-600" />
-                    बैच समय: {activeStream.batchSchedule}
+                  <span className="flex items-center gap-1.5 bg-white/70 px-2.5 py-1 rounded-lg border border-blue-100">
+                    <Calendar className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
+                    <span>Schedule: {activeStream.batchSchedule}</span>
                   </span>
-                  <span className="flex items-center gap-1.5">
-                    <GraduationCap className="w-3.5 h-3.5 text-emerald-600" />
-                    योग्यता: {activeStream.eligibility}
+                  <span className="flex items-center gap-1.5 bg-white/70 px-2.5 py-1 rounded-lg border border-blue-100">
+                    <GraduationCap className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+                    <span>Eligibility: {activeStream.eligibility}</span>
                   </span>
                 </div>
               </div>
 
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 w-full md:w-auto">
                 <button
                   onClick={() => onExamClick(activeStream.name)}
-                  className="w-full md:w-auto px-6 py-3 bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center gap-2"
+                  className="w-full md:w-auto px-5 sm:px-6 py-3 bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center gap-2 min-h-[44px]"
                 >
-                  <span>इस बैच में प्रवेश लें</span>
+                  <span>Enroll in this Batch</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
             {/* Target Posts Covered */}
-            <div className="mb-8">
+            <div className="mb-6 sm:mb-8">
               <h5 className="text-xs uppercase font-black tracking-wider text-slate-400 mb-2.5">
-                इस बैच से कवर होने वाली प्रमुख नौकरियां व पद:
+                Target Career Posts & Positions Covered:
               </h5>
               <div className="flex flex-wrap gap-2">
                 {activeStream.targetPosts.map((post, pIdx) => (
                   <span 
                     key={pIdx}
-                    className="inline-flex items-center gap-1.5 bg-slate-100 text-slate-800 font-bold text-xs px-3 py-1.5 rounded-xl border border-slate-200"
+                    className="inline-flex items-center gap-1.5 bg-slate-100 text-slate-800 font-bold text-xs px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200"
                   >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                     <span>{post}</span>
                   </span>
                 ))}
               </div>
             </div>
 
-            {/* Preparation Methodology (तैयारी का प्रकार) */}
-            <div className="mb-10 bg-amber-50/60 border border-amber-200 rounded-2xl p-5 sm:p-6">
+            {/* Preparation Methodology */}
+            <div className="mb-8 sm:mb-10 bg-amber-50/60 border border-amber-200 rounded-2xl p-4 sm:p-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
                 <h5 className="font-black text-slate-900 text-base sm:text-lg">
-                  तैयारी का प्रकार एवं शिक्षण पद्धति (Type of Preparation Offered):
+                  Teaching Methodology & Preparation Types:
                 </h5>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3">
                 {activeStream.preparationTypes.map((prepType, tIdx) => (
                   <div 
                     key={tIdx}
-                    className="bg-white p-3.5 rounded-xl border border-amber-200/80 shadow-sm flex items-start gap-2.5"
+                    className="bg-white p-3 sm:p-3.5 rounded-xl border border-amber-200/80 shadow-2xs flex items-start gap-2.5"
                   >
                     <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">
                       ✓
                     </div>
-                    <span className="text-xs sm:text-sm text-slate-800 font-semibold leading-snug">
+                    <span className="text-xs sm:text-sm text-slate-800 font-semibold leading-snug break-words">
                       {prepType}
                     </span>
                   </div>
@@ -311,72 +317,84 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
             </div>
 
             {/* Detailed Subjects & Topics Breakdown */}
-            <div>
-              <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
+            <div id="syllabus-breakdown-section">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 mb-4 sm:mb-6">
                 <div>
-                  <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">
-                    पाठ्यक्रम विवरण
-                  </span>
-                  <h5 className="text-lg sm:text-xl font-black text-[#0c2b5e]">
-                    शामिल विषय एवं टॉपिक-वार पाठ्यक्रम ({activeStream.subjects.length} मुख्य विषय)
+                  <div className="inline-flex items-center gap-1.5 text-xs font-black text-blue-700 uppercase tracking-wider mb-1">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-500 flex-shrink-0" />
+                    <span>Syllabus Breakdown</span>
+                  </div>
+                  <h5 className="text-base sm:text-xl md:text-2xl font-black text-[#0c2b5e] leading-tight break-words">
+                    Included Subjects & Topic-Wise Curriculum ({activeStream.subjects.length} Core Subjects)
                   </h5>
                 </div>
-                <span className="text-xs text-slate-500 font-medium">
-                  किसी भी विषय पर क्लिक करके विस्तृत टॉपिक देखें
+                <span className="self-start sm:self-auto text-[11px] sm:text-xs text-slate-600 font-semibold bg-slate-100/90 px-3 py-1.5 rounded-full border border-slate-200 whitespace-nowrap shadow-2xs">
+                  Tap subject to expand topics
                 </span>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-3 sm:space-y-4">
                 {activeStream.subjects.map((sub: PosterSubjectItem, sIdx: number) => {
                   const isExpanded = expandedSubjectIndex === sIdx;
                   return (
                     <div 
                       key={sIdx}
-                      className="border border-slate-200 rounded-2xl overflow-hidden transition-all bg-white hover:border-[#0c2b5e]"
+                      className="border border-slate-200 hover:border-[#0c2b5e]/60 rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden transition-all bg-white shadow-xs hover:shadow-md"
                     >
                       <button
+                        type="button"
                         onClick={() => setExpandedSubjectIndex(isExpanded ? null : sIdx)}
-                        className="w-full p-4 text-left flex items-center justify-between gap-3 bg-slate-50/70 hover:bg-blue-50/40 transition"
+                        className="w-full p-3.5 sm:p-4 md:p-5 text-left flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-gradient-to-r from-slate-50/90 to-white hover:from-blue-50/30 hover:to-white transition"
                       >
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-xl bg-blue-100 text-[#0c2b5e] font-black text-xs flex items-center justify-center">
-                            {sIdx + 1}
+                        {/* Subject Number & Title */}
+                        <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0 flex-1">
+                          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-blue-100 text-[#0c2b5e] font-black text-xs sm:text-sm flex items-center justify-center flex-shrink-0 shadow-xs">
+                            {String(sIdx + 1).padStart(2, '0')}
                           </div>
-                          <div>
-                            <div className="font-black text-slate-900 text-sm sm:text-base">
+                          <div className="min-w-0 flex-1">
+                            <div className="font-black text-slate-900 text-sm sm:text-base leading-tight break-words">
                               {sub.name}
                             </div>
-                            <div className="text-xs text-slate-500 font-medium">
+                            <div className="text-[11px] sm:text-xs text-slate-500 font-medium leading-normal mt-0.5 truncate sm:whitespace-normal">
                               {sub.nameEnglish}
                             </div>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-2">
-                          {sub.marksOrWeightage && (
-                            <span className="text-[11px] font-bold bg-[#ffc700]/30 text-[#071c3d] px-2.5 py-1 rounded-lg border border-[#ffc700]/40">
-                              {sub.marksOrWeightage}
+                        {/* Marks & Expand Button */}
+                        <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto pt-2.5 sm:pt-0 border-t border-slate-100 sm:border-0">
+                          {sub.marksOrWeightage ? (
+                            <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-black bg-[#ffc700] text-[#071c3d] px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg sm:rounded-xl border border-amber-400/80 shadow-2xs whitespace-nowrap">
+                              <Sparkles className="w-3 h-3 text-[#071c3d] flex-shrink-0" />
+                              <span className="truncate max-w-[130px] sm:max-w-none">{sub.marksOrWeightage}</span>
                             </span>
-                          )}
-                          <span className="text-xs font-bold text-[#0c2b5e] bg-white px-2 py-1 rounded border border-slate-200">
-                            {isExpanded ? 'कम देखें ▲' : 'टॉपिक देखें ▼'}
+                          ) : <span className="sm:hidden" />}
+                          <span className="inline-flex items-center gap-1.5 text-xs font-bold bg-[#0c2b5e] hover:bg-[#164282] text-white px-3 sm:px-3.5 py-1.5 rounded-lg sm:rounded-xl transition shadow-2xs whitespace-nowrap min-h-[36px]">
+                            <span>{isExpanded ? 'Hide Topics' : 'View Topics'}</span>
+                            {isExpanded ? <ChevronUp className="w-3.5 h-3.5 text-amber-300 flex-shrink-0" /> : <ChevronDown className="w-3.5 h-3.5 text-amber-300 flex-shrink-0" />}
                           </span>
                         </div>
                       </button>
 
                       {isExpanded && (
-                        <div className="p-4 sm:p-5 bg-white border-t border-slate-100 text-xs sm:text-sm text-slate-700 space-y-2">
-                          <div className="font-bold text-xs uppercase tracking-wider text-slate-400 mb-2">
-                            कक्षा में अध्यापन किए जाने वाले प्रमुख अध्याय व टॉपिक:
+                        <div className="p-3.5 sm:p-5 md:p-6 bg-slate-50/80 border-t border-slate-100 text-xs sm:text-sm text-slate-700 space-y-3">
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 pb-2 border-b border-slate-200/60">
+                            <span className="flex items-center gap-1.5 text-[#0c2b5e] leading-snug">
+                              <BookOpen className="w-3.5 h-3.5 text-amber-500 flex-shrink-0" />
+                              <span>Core Syllabus Chapters & Lecture Topics:</span>
+                            </span>
+                            <span className="text-[11px] text-slate-500 font-semibold bg-white px-2 py-0.5 rounded-md border border-slate-200 self-start sm:self-auto">
+                              {sub.topics.length} Key Topics Covered
+                            </span>
                           </div>
-                          <ul className="space-y-2">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 pt-1">
                             {sub.topics.map((top, tIdx) => (
-                              <li key={tIdx} className="flex items-start gap-2.5">
-                                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0" />
-                                <span className="leading-relaxed">{top}</span>
-                              </li>
+                              <div key={tIdx} className="flex items-start gap-2 sm:gap-2.5 p-2.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+                                <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
+                                <span className="leading-snug text-slate-800 font-medium break-words text-xs sm:text-sm">{top}</span>
+                              </div>
                             ))}
-                          </ul>
+                          </div>
                         </div>
                       )}
                     </div>
@@ -386,17 +404,28 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
             </div>
 
             {/* Bottom Call to Action */}
-            <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-xs text-slate-600 font-medium">
-                ★ <strong className="text-slate-900">3 दिन की फ्री डेमो कक्षाएं उपलब्ध</strong> | कमजोर विद्यार्थियों हेतु विशेष डाउट काउंटर
+            <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+              <div className="text-xs text-slate-600 font-medium text-center sm:text-left">
+                ★ <strong className="text-slate-900">3 Days Free Demo Classes Available</strong> | Dedicated Doubt Counter
               </div>
-              <button
-                onClick={() => onExamClick(activeStream.name)}
-                className="w-full sm:w-auto px-6 py-2.5 bg-[#0c2b5e] hover:bg-[#071c3d] text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5"
-              >
-                <span>{activeStream.name} बैच में डेमो हेतु रजिस्टर करें</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#ffc700]" />
-              </button>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto">
+                {onViewCourseDetail && (
+                  <button
+                    onClick={() => onViewCourseDetail(activeStream.id)}
+                    className="w-full sm:w-auto px-4 py-3 sm:py-2.5 bg-slate-100 hover:bg-[#0c2b5e] text-slate-700 hover:text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5 min-h-[44px]"
+                  >
+                    <span>View {activeStream.name} Course Page</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                )}
+                <button
+                  onClick={() => onExamClick(activeStream.name)}
+                  className="w-full sm:w-auto px-5 py-3 sm:py-2.5 bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm min-h-[44px]"
+                >
+                  <span>Register for Free Demo</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#ffc700]" />
+                </button>
+              </div>
             </div>
 
           </div>
@@ -406,10 +435,10 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
         <div>
           <div className="text-center max-w-2xl mx-auto mb-8">
             <h3 className="text-xl sm:text-2xl font-black text-slate-900">
-              अन्य सभी प्रतियोगी परीक्षाएं (All Competitive Exams)
+              All Competitive & Government Job Examinations
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 mt-1">
-              अनूपगढ़ एवं आसपास के क्षेत्र में सरकारी सेवा चयन हेतु अग्रणी संस्थान
+              Premier Institution in Anupgarh for State and Central Examination Selection
             </p>
           </div>
 
@@ -443,13 +472,25 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({ onExamClick })
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-slate-100">
+                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+                    <button
+                      onClick={() => {
+                        if (onViewCourseDetail) {
+                          onViewCourseDetail(item.id);
+                        } else {
+                          onExamClick(item.name);
+                        }
+                      }}
+                      className="flex-1 py-2 px-3 rounded-xl bg-slate-100 hover:bg-[#0c2b5e] text-slate-700 hover:text-white text-xs font-bold transition flex items-center justify-center gap-1"
+                    >
+                      <span>View Course Page</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
                     <button
                       onClick={() => onExamClick(item.name)}
-                      className="w-full py-2 px-3 rounded-xl bg-slate-50 hover:bg-[#0c2b5e] text-slate-700 hover:text-white text-xs font-bold transition flex items-center justify-center gap-1"
+                      className="py-2 px-3 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs font-bold transition shadow-xs"
                     >
-                      <span>पाठ्यक्रम व एडमिशन</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <span>Enquire</span>
                     </button>
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, MessageCircle, Sparkles, UserCheck, Shield } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle, Sparkles, UserCheck, Shield, Instagram } from 'lucide-react';
 import { InstituteLogo } from './InstituteLogo';
 
 interface NavbarProps {
@@ -33,12 +33,11 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'about', label: 'About Us' },
     { id: 'courses', label: 'Courses' },
     { id: 'batch', label: 'New Batches' },
-    { id: 'exams', label: 'Exams' },
+    { id: 'exams', label: 'Exams & Syllabus' },
     { id: 'test-series', label: 'Test Series' },
     { id: 'faculty', label: 'Faculty' },
-    { id: 'results', label: 'Results' },
     { id: 'gallery', label: 'Gallery' },
-    { id: 'notices', label: 'Notices' },
+    { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -94,6 +93,18 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Right Action Buttons */}
         <div className="hidden md:flex items-center gap-3">
+          {/* Instagram Reel Link */}
+          <a
+            href="https://www.instagram.com/balramnokhwal/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 text-xs text-pink-600 hover:text-pink-700 bg-pink-50/70 hover:bg-pink-100/80 px-2.5 py-1.5 rounded-lg transition border border-pink-200 font-bold"
+            title="Director Balram Nokhwal Instagram Reels"
+          >
+            <Instagram className="w-3.5 h-3.5 text-pink-600" />
+            <span className="hidden lg:inline">Reels</span>
+          </a>
+
           {/* Admin link button */}
           <button
             onClick={onOpenAdmin}

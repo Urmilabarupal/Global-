@@ -7,7 +7,8 @@ import {
   Navigation, 
   Mail, 
   Sparkles,
-  PenTool
+  PenTool,
+  Instagram
 } from 'lucide-react';
 import { InstituteSettings } from '../types';
 
@@ -86,16 +87,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
             </div>
 
             {/* Director & Contact Numbers Box */}
-            <div className="bg-gradient-to-br from-[#071c3d] to-[#0c2b5e] text-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-amber-400/40 relative">
-              <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
+            <div className="bg-gradient-to-br from-[#071c3d] via-[#0c2b5e] to-[#164282] text-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-amber-400/40 relative overflow-hidden">
+              <div className="flex items-center justify-between pb-4 border-b border-white/15 mb-5">
                 <div className="flex items-center gap-2">
                   <PenTool className="w-4 h-4 text-amber-400" />
                   <span className="text-xs font-bold uppercase tracking-wider text-amber-300">
-                    Managing Director
+                    Founder & Director
                   </span>
                 </div>
                 <div className="text-lg font-black text-white">
-                  {settings.directorName}
+                  Balram Nokhwal
                 </div>
               </div>
 
@@ -150,6 +151,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span>Chat on WhatsApp Instantly</span>
+                </a>
+
+                {/* Official Instagram Reel link */}
+                <a
+                  href="https://www.instagram.com/balramnokhwal/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 hover:from-pink-700 hover:to-indigo-700 text-white font-bold py-3 rounded-2xl shadow-md transition text-xs sm:text-sm border border-pink-400/30"
+                  id="contact-instagram-reel-btn"
+                >
+                  <Instagram className="w-4 h-4" />
+                  <span>Watch Reels on Instagram (@balramnokhwal)</span>
                 </a>
               </div>
 

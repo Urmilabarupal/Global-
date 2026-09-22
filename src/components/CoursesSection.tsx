@@ -152,10 +152,16 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
                     </div>
 
                     {/* Course Title */}
-                    <h3 className="text-xl font-black text-slate-900 group-hover:text-[#0c2b5e] transition leading-tight">
+                    <h3 
+                      onClick={() => onSelectCourse(course)}
+                      className="text-xl font-black text-slate-900 group-hover:text-[#0c2b5e] transition leading-tight cursor-pointer hover:underline"
+                    >
                       {course.name}
                     </h3>
-                    <div className="text-xs sm:text-sm font-semibold text-amber-600 mt-0.5 mb-3">
+                    <div 
+                      onClick={() => onSelectCourse(course)}
+                      className="text-xs sm:text-sm font-semibold text-amber-600 mt-0.5 mb-3 cursor-pointer"
+                    >
                       {course.nameHindi}
                     </div>
 
@@ -165,7 +171,10 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
                     </p>
 
                     {/* Details Snippet */}
-                    <div className="bg-slate-50 p-3 rounded-2xl border border-slate-100 space-y-1.5 mb-4 text-xs text-slate-700">
+                    <div 
+                      onClick={() => onSelectCourse(course)}
+                      className="bg-slate-50 p-3 rounded-2xl border border-slate-100 space-y-1.5 mb-4 text-xs text-slate-700 cursor-pointer hover:bg-slate-100/80 transition"
+                    >
                       <div className="flex items-center justify-between">
                         <span className="text-slate-400 font-medium">Eligibility:</span>
                         <span className="font-semibold text-slate-800 truncate max-w-[170px]">{course.eligibility}</span>
@@ -185,11 +194,11 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
                   <div className="pt-3 border-t border-slate-100 flex items-center gap-2">
                     <button
                       onClick={() => onSelectCourse(course)}
-                      className="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-[#0c2b5e] text-slate-700 hover:text-white text-xs font-bold transition flex items-center justify-center gap-1"
+                      className="flex-1 py-2.5 px-3 rounded-xl bg-[#0c2b5e] hover:bg-[#071c3d] text-white text-xs font-bold transition flex items-center justify-center gap-1 shadow-sm"
                       id={`course-view-details-${course.id}`}
                     >
-                      <span>View Details</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <span>View Full Course Page</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-amber-300" />
                     </button>
 
                     <button

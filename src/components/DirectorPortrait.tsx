@@ -34,7 +34,7 @@ export const DirectorPortrait: React.FC<DirectorPortraitProps> = ({
         {/* Director Photo Frame */}
         <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-gradient-to-b from-slate-100 via-blue-50 to-[#0c2b5e]/10">
           <img 
-            src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&auto=format&fit=crop&q=85" 
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=85" 
             alt={`Director ${directorName} - Global Coaching Classes Anupgarh`}
             className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
             loading="eager"
