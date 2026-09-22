@@ -46,7 +46,7 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
   }, [courses, selectedCategory, searchQuery]);
 
   return (
-    <section id="courses" className="py-16 md:py-24 bg-slate-50 relative">
+    <section id="courses" className="py-16 md:py-24 bg-[#eef4fb] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
@@ -121,7 +121,7 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredCourses.map((course) => {
+            {filteredCourses.map((course, index) => {
               const badgeColors = {
                 orange: 'bg-orange-500 text-white',
                 green: 'bg-emerald-600 text-white',
@@ -133,7 +133,7 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
               return (
                 <div
                   key={course.id}
-                  className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 transition-colors duration-300 flex flex-col justify-between group hover:border-[#0c2b5e]/40 relative"
+                  className={`${index % 2 === 0 ? 'bg-white' : 'bg-[#f8fbff]'} rounded-2xl p-5 sm:p-6 border border-[#d7e2f0] transition-colors duration-300 flex flex-col justify-between group hover:border-[#0c2b5e]/40 relative`}
                   id={`course-card-${course.id}`}
                 >
                   <div>
