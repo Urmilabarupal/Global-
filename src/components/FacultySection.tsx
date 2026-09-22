@@ -50,7 +50,11 @@ export const FacultySection: React.FC<FacultySectionProps> = ({
                 {/* Photo Col */}
                 <div className="md:col-span-5 relative aspect-[4/5] md:aspect-auto overflow-hidden bg-slate-100 min-h-[320px]">
                   <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=85"
+                    src={
+                      (member.isDirector && typeof window !== 'undefined' && localStorage.getItem('global_coaching_director_photo')) 
+                        ? (localStorage.getItem('global_coaching_director_photo') as string)
+                        : (member.photoUrl || "/balram-nokhwal.jpg")
+                    }
                     alt={member.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700"
                     loading="lazy"

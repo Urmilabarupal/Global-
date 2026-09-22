@@ -988,9 +988,11 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
             {/* Director Contact & Mentorship Card */}
             <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
               <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0c2b5e] to-blue-700 text-white flex items-center justify-center font-black text-xl flex-shrink-0 shadow-md">
-                  BN
-                </div>
+                <img
+                  src="/balram-nokhwal.jpg"
+                  alt="Balram Nokhwal"
+                  className="w-12 h-12 rounded-2xl object-cover object-top flex-shrink-0 shadow-md border border-slate-200"
+                />
                 <div>
                   <h4 className="font-bold text-slate-900 text-base">Balram Nokhwal</h4>
                   <p className="text-xs text-amber-700 font-semibold">Founder & Director</p>

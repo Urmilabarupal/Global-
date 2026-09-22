@@ -20,10 +20,9 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({
   onOpenAdmin
 }) => {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
+    <div className="min-h-screen bg-[#eef4fb] text-slate-900 pb-20">
       <PageBanner
         title="Student Results & Selection Hall of Fame"
-        titleHindi="ग्लोबल कोचिंग क्लासेज के चयनित छात्र-छात्राएं"
         subtitle="100% verified selections in Rajasthan Police, REET, Patwari, CET, VDO, Railways, and SSC from Global Coaching Classes Anupgarh."
         breadcrumbCurrent="Results & Selections"
         badge="100% Verified Government Selections"
@@ -35,9 +34,9 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12">
         
         {/* Verification Guarantee Banner */}
-        <div className="bg-emerald-50 border border-emerald-200 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-bold flex-shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold flex-shrink-0">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div className="space-y-1">
@@ -59,7 +58,7 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({
         </div>
 
         {/* Results Section */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#d7e2f0] shadow-sm">
           <ResultsSection
             results={results}
             onOpenAdmin={onOpenAdmin}

@@ -63,7 +63,6 @@ export const BatchesPage: React.FC<BatchesPageProps> = ({
   const batches = [
     {
       title: 'Morning Super Foundation Batch',
-      titleHindi: 'प्रातःकालीन सुपर फाउंडेशन बैच',
       time: '09:00 AM - 01:00 PM (Daily 4 Hours)',
       target: 'Rajasthan CET (12th & Graduation), REET Level-1 & Level-2, Rajasthan Police Constable',
       status: 'Admissions Open (Next Monday 9 AM)',
@@ -74,12 +73,10 @@ export const BatchesPage: React.FC<BatchesPageProps> = ({
         'Free printed notes & formula booklets provided',
         '3 Days Free Demo Class before fee submission'
       ],
-      badge: 'High Demand',
-      color: 'border-blue-200 bg-blue-50/40'
+      badge: 'High Demand'
     },
     {
       title: 'Afternoon Competitive Target Batch',
-      titleHindi: 'दोपहर स्पेशल टारगेट बैच',
       time: '01:00 PM - 05:00 PM (Daily 4 Hours)',
       target: 'SSC GD Constable, SSC CGL / CHSL, Railway NTPC & Group-D, Patwari & VDO',
       status: 'Seats Filling Fast',
@@ -90,12 +87,10 @@ export const BatchesPage: React.FC<BatchesPageProps> = ({
         'Daily doubt counter available from 2:00 PM to 4:00 PM',
         '3 Days Free Trial Demo available'
       ],
-      badge: 'Target 2025-26',
-      color: 'border-amber-200 bg-amber-50/40'
+      badge: 'Target 2025-26'
     },
     {
       title: 'Evening Computer & High Court Typing Batch',
-      titleHindi: 'सायंकालीन कंप्यूटर एवं टाइपिंग बैच',
       time: '04:00 PM - 07:00 PM (Flexible Shifts)',
       target: 'RS-CIT Computer Diploma (RKCL Authorized), High Court LDC Typing, RSSB Typing Speed',
       status: 'Limited Lab Seats (30 PCs)',
@@ -106,16 +101,14 @@ export const BatchesPage: React.FC<BatchesPageProps> = ({
         'High-speed typing accuracy software and timed speed tests',
         'Special certificate guidance for government vacancies'
       ],
-      badge: 'RKCL Approved',
-      color: 'border-emerald-200 bg-emerald-50/40'
+      badge: 'RKCL Approved'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
+    <div className="min-h-screen bg-[#eef4fb] text-slate-900 pb-20">
       <PageBanner
         title="Upcoming New Batches & Classroom Schedules"
-        titleHindi="ग्लोबल कोचिंग क्लासेज अनूपगढ़ — नए बैच प्रारंभ"
         subtitle="New classroom batches start every Monday at 9:00 AM with 3 days free demo trial. Book your seat online to secure study material on day one."
         breadcrumbCurrent="New Batches"
         badge="Batch Starts Every Monday"
@@ -175,7 +168,7 @@ export const BatchesPage: React.FC<BatchesPageProps> = ({
             {batches.map((b, idx) => (
               <div
                 key={idx}
-                className={`bg-white rounded-3xl border-2 ${b.color} p-6 sm:p-8 shadow-sm hover:shadow-lg transition space-y-5 flex flex-col justify-between`}
+                className={`${idx % 2 === 0 ? 'bg-white' : 'bg-[#f8fbff]'} rounded-2xl border border-[#d7e2f0] p-6 sm:p-8 shadow-sm hover:shadow-md transition space-y-5 flex flex-col justify-between hover:border-[#0c2b5e]/40`}
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between gap-2">
@@ -190,7 +183,6 @@ export const BatchesPage: React.FC<BatchesPageProps> = ({
 
                   <div>
                     <h4 className="text-xl font-black text-[#0c2b5e] leading-snug">{b.title}</h4>
-                    <div className="text-xs font-bold text-amber-600">{b.titleHindi}</div>
                   </div>
 
                   <div className="p-3 bg-slate-50 rounded-2xl border border-slate-100 text-xs text-slate-700">
