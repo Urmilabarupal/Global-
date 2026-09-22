@@ -53,10 +53,6 @@ export const Footer: React.FC<FooterProps> = ({
               </p>
             </div>
 
-            <div className="pt-1 text-xs text-slate-500">
-              Founder & Director: <strong className="text-[#0c2b5e] text-sm font-black">Balram Nokhwal</strong>
-            </div>
-
             {/* Helpline quick buttons */}
             <div className="flex items-center gap-2 pt-1 flex-wrap">
               <a
