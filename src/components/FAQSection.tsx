@@ -3,10 +3,7 @@ import {
   HelpCircle, 
   ChevronDown, 
   Search, 
-  PhoneCall, 
   MessageCircle, 
-  Sparkles,
-  BookOpen,
   CheckCircle2
 } from 'lucide-react';
 import { InstituteSettings } from '../types';
@@ -80,7 +77,7 @@ const FAQ_ITEMS: FAQItem[] = [
   }
 ];
 
-export const FAQSection: React.FC<FAQSectionProps> = ({ settings, onEnquireClick }) => {
+export const FAQSection: React.FC<FAQSectionProps> = () => {
   const [openId, setOpenId] = useState<string | null>('faq-1');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -228,41 +225,6 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ settings, onEnquireClick
           )}
         </div>
 
-        {/* Still Have Questions CTA Banner */}
-        <div className="mt-12 max-w-4xl mx-auto bg-gradient-to-r from-[#071c3d] via-[#0c2b5e] to-[#164282] rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 text-center md:text-left">
-            <div className="inline-flex items-center gap-1.5 bg-[#ffc700] text-[#071c3d] text-xs font-extrabold px-3 py-1 rounded-full uppercase">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Direct Mentorship</span>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-black text-white">
-              Still have questions about courses or exam prep?
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-200">
-              Speak directly with Director Balram Nokhwal or visit our campus for free counseling.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
-            <a
-              href={`tel:${settings.primaryPhone1.replace(/[^0-9]/g, '')}`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#ffc700] hover:bg-amber-400 text-[#071c3d] px-5 py-3 rounded-xl font-black text-xs sm:text-sm shadow-md transition"
-              id="faq-call-counselor-btn"
-            >
-              <PhoneCall className="w-4 h-4" />
-              <span>Call: {settings.primaryPhone1}</span>
-            </a>
-
-            <button
-              onClick={onEnquireClick}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm transition backdrop-blur-sm"
-              id="faq-enquire-modal-btn"
-            >
-              <BookOpen className="w-4 h-4 text-amber-300" />
-              <span>Request Free Callback</span>
-            </button>
-          </div>
-        </div>
 
       </div>
     </section>
