@@ -48,14 +48,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav 
-      className={`sticky top-7 sm:top-8 z-40 transition-all duration-300 ${
+      className={`sticky top-0 z-40 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200 py-0.5 sm:py-1.5' 
           : 'bg-white shadow-sm border-b border-slate-100 py-1 sm:py-2'
       }`}
       id="main-navigation-bar"
     >
-      <div className="max-w-7xl mx-auto px-2.5 sm:px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 min-h-12 flex items-center justify-between gap-2">
         {/* Brand Logo */}
         <button 
           onClick={() => handleNavClick('home')}
@@ -134,7 +134,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Mobile Compact Controls */}
-        <div className="flex md:hidden items-center gap-1">
+        <div className="flex md:hidden items-center gap-1.5 shrink-0">
           <button
             onClick={onOpenAdmission}
             className="bg-gradient-to-r from-[#dc2626] to-[#b91c1c] text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md flex items-center gap-1 shadow-xs active:scale-95 transition"

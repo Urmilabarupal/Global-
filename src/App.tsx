@@ -29,8 +29,6 @@ import { CourseDetailPage } from './components/CourseDetailPage';
 import { AboutSection } from './components/AboutSection';
 import { ExamPreparation } from './components/ExamPreparation';
 import { TestSeriesSection } from './components/TestSeriesSection';
-import { FacultySection } from './components/FacultySection';
-import { GallerySection } from './components/GallerySection';
 import { FAQSection } from './components/FAQSection';
 import { AdmissionEnquirySection } from './components/AdmissionEnquirySection';
 import { ContactSection } from './components/ContactSection';
@@ -140,8 +138,9 @@ export default function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       try {
-        const isDismissed = localStorage.getItem('gcc_admission_popup_dismissed');
-        if (!isDismissed) {
+        const dismissedAt = Number(localStorage.getItem('gcc_admission_popup_dismissed_at') || 0);
+        const dismissalWindow = 24 * 60 * 60 * 1000;
+        if (!dismissedAt || Date.now() - dismissedAt >= dismissalWindow) {
           setIsAdmissionPopupOpen(true);
         }
       } catch (e) {
@@ -445,19 +444,6 @@ export default function App() {
           <TestSeriesSection
             settings={settings}
             onEnquireClick={() => handleOpenAdmissionWithCourse('Test Series Monday-Wednesday')}
-          />
-
-          {/* 9. Faculty & Director Section */}
-          <FacultySection
-            faculty={faculty}
-            onOpenAdmin={() => setIsAdminOpen(true)}
-            onEnquireClick={() => handleOpenAdmissionWithCourse()}
-          />
-
-          {/* 10. Photo Gallery Section with Lightbox */}
-          <GallerySection
-            gallery={gallery}
-            onOpenAdmin={() => setIsAdminOpen(true)}
           />
 
           {/* 11. Frequently Asked Questions Section */}

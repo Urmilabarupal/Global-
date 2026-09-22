@@ -12,7 +12,6 @@ import {
   PhoneCall,
   GraduationCap
 } from 'lucide-react';
-import { DirectorPortrait } from './DirectorPortrait';
 import { InstituteSettings } from '../types';
 
 interface HeroProps {
@@ -45,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Institute Branding, Tagline, New Batch, and Featured Exams */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
+          <div className="lg:col-span-9 flex flex-col items-start text-left">
             
             {/* Top Badges Row */}
             <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -116,97 +115,6 @@ export const Hero: React.FC<HeroProps> = ({
               </button>
             </div>
 
-            {/* 3 Prominent Color Course Cards */}
-            <div className="mt-8 w-full">
-              <div className="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2.5 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#ffc700] animate-ping" />
-                <span>Featured Exam Target Batches:</span>
-              </div>
-
-              <div className="grid grid-cols-3 gap-2.5 sm:gap-4 max-w-xl">
-                {/* CET - Orange Card */}
-                <button
-                  onClick={() => onCourseSelect('cet')}
-                  className="group bg-gradient-to-br from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white p-2.5 sm:p-3 rounded-2xl shadow-lg border border-orange-300/40 transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center cursor-pointer"
-                  id="hero-exam-card-cet"
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/20 flex items-center justify-center mb-1 group-hover:scale-110 transition">
-                    <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  </div>
-                  <span className="text-lg sm:text-2xl font-black tracking-tight">CET</span>
-                  <span className="text-[10px] sm:text-xs text-amber-100 font-medium leading-tight">
-                    12th & Graduate
-                  </span>
-                </button>
-
-                {/* REET - Green Card */}
-                <button
-                  onClick={() => onCourseSelect('reet-l1-l2')}
-                  className="group bg-gradient-to-br from-emerald-600 to-green-700 hover:from-emerald-500 hover:to-green-600 text-white p-2.5 sm:p-3 rounded-2xl shadow-lg border border-emerald-300/40 transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center cursor-pointer"
-                  id="hero-exam-card-reet"
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/20 flex items-center justify-center mb-1 group-hover:scale-110 transition">
-                    <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  </div>
-                  <span className="text-lg sm:text-2xl font-black tracking-tight">REET</span>
-                  <span className="text-[10px] sm:text-xs text-emerald-100 font-medium leading-tight">
-                    Level 1 & Level 2
-                  </span>
-                </button>
-
-                {/* SSC - Red Card */}
-                <button
-                  onClick={() => onCourseSelect('ssc-gd-cgl')}
-                  className="group bg-gradient-to-br from-rose-600 to-red-700 hover:from-rose-500 hover:to-red-600 text-white p-2.5 sm:p-3 rounded-2xl shadow-lg border border-rose-300/40 transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center cursor-pointer"
-                  id="hero-exam-card-ssc"
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/20 flex items-center justify-center mb-1 group-hover:scale-110 transition">
-                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  </div>
-                  <span className="text-lg sm:text-2xl font-black tracking-tight">SSC</span>
-                  <span className="text-[10px] sm:text-xs text-rose-100 font-medium leading-tight">
-                    GD / CGL / CHSL
-                  </span>
-                </button>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Right Column: Director Balram Nokhwal Presentation & Floating Badges */}
-          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-            {/* Floating Educational Graphics */}
-            <div className="hidden sm:block absolute -top-4 -left-6 z-20 bg-white text-[#0c2b5e] p-2.5 rounded-2xl shadow-xl border border-amber-300 transform -rotate-3 animate-bounce duration-1000">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-amber-100 text-[#0c2b5e] flex items-center justify-center">
-                  <GraduationCap className="w-5 h-5 text-amber-600" />
-                </div>
-                <div className="text-left">
-                  <div className="text-xs font-black">100% Exam-Oriented</div>
-                  <div className="text-[10px] text-slate-500">Trend-Based Curriculum</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="hidden sm:block absolute -bottom-4 -right-4 z-20 bg-[#071c3d] text-white p-3 rounded-2xl shadow-xl border border-amber-400 transform rotate-2">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                  <CheckCircle2 className="w-5 h-5" />
-                </div>
-                <div className="text-left">
-                  <div className="text-xs font-black text-amber-300">Mon & Wed</div>
-                  <div className="text-[10px] text-slate-300">Regular Test Series</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Teacher Profile Presentation */}
-            <DirectorPortrait 
-              directorName={settings.directorName}
-              phone1={settings.primaryPhone1}
-              phone2={settings.primaryPhone2}
-              onEnquireClick={onAdmissionClick}
-            />
           </div>
 
         </div>

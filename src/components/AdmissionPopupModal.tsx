@@ -29,8 +29,6 @@ export const AdmissionPopupModal: React.FC<AdmissionPopupModalProps> = ({
   onEnroll,
   onLearnMore
 }) => {
-  const [dontShowAgain, setDontShowAgain] = useState(false);
-
   // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -47,12 +45,10 @@ export const AdmissionPopupModal: React.FC<AdmissionPopupModalProps> = ({
   if (!isOpen) return null;
 
   const handleClose = () => {
-    if (dontShowAgain) {
-      try {
-        localStorage.setItem('gcc_admission_popup_dismissed', 'true');
-      } catch (e) {
-        // ignore storage errors
-      }
+    try {
+      localStorage.setItem('gcc_admission_popup_dismissed_at', String(Date.now()));
+    } catch (e) {
+      // Ignore storage errors and still close the modal.
     }
     onClose();
   };
@@ -142,7 +138,7 @@ export const AdmissionPopupModal: React.FC<AdmissionPopupModalProps> = ({
               <span className="text-[#0c2b5e] font-black">Under Director Balram Nokhwal</span>
             </div>
             <div className="flex flex-wrap gap-1.5">
-              {['CET (12th & Graduate)', 'REET (Level 1 & Level 2)', 'SSC GD / CGL', 'Rajasthan Police & SI', 'Patwari & VDO', 'RS-CIT Diploma', 'English & Hindi Typing'].map((exam, i) => (
+              {['CET (12th & Graduate)', 'REET (Level 1 & Level 2)', 'SSC GD / CGL', 'Rajasthan Police & SI', 'Patwari & VDO', 'RS-CIT Diploma', 'English Typing'].map((exam, i) => (
                 <span key={i} className="inline-flex items-center gap-1 bg-white text-slate-800 text-xs font-semibold px-2.5 py-1 rounded-lg border border-slate-200 shadow-2xs">
                   <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                   <span>{exam}</span>
@@ -196,15 +192,7 @@ export const AdmissionPopupModal: React.FC<AdmissionPopupModalProps> = ({
 
         {/* Footer Actions */}
         <div className="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <label className="flex items-center gap-2 text-xs text-slate-500 select-none cursor-pointer self-start sm:self-center">
-            <input
-              type="checkbox"
-              checked={dontShowAgain}
-              onChange={(e) => setDontShowAgain(e.target.checked)}
-              className="rounded border-slate-300 text-[#0c2b5e] focus:ring-blue-500"
-            />
-            <span>Do not show again this session</span>
-          </label>
+          <p className="text-xs text-slate-500 self-start sm:self-center">You can close this offer. It will stay hidden for 24 hours.</p>
 
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <button
