@@ -1,6 +1,5 @@
 import React from 'react';
 import { PageBanner } from '../components/PageBanner';
-import { FacultySection } from '../components/FacultySection';
 import { FacultyMember, InstituteSettings } from '../types';
 import { Clock, HelpCircle, PhoneCall, Sparkles, UserCheck } from 'lucide-react';
 
@@ -13,11 +12,9 @@ interface FacultyPageProps {
 }
 
 export const FacultyPage: React.FC<FacultyPageProps> = ({
-  faculty,
   settings,
   onBackToHome,
-  onOpenAdmission,
-  onOpenAdmin
+  onOpenAdmission
 }) => {
   const cleanPhone = settings.primaryPhone1.replace(/[^0-9]/g, '');
 
@@ -57,15 +54,6 @@ export const FacultyPage: React.FC<FacultyPageProps> = ({
           >
             Attend Teacher Demo Classes
           </button>
-        </div>
-
-        {/* Full Faculty Section */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-          <FacultySection
-            faculty={faculty}
-            onOpenAdmin={onOpenAdmin}
-            onEnquireClick={() => onOpenAdmission()}
-          />
         </div>
 
       </div>
