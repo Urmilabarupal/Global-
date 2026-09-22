@@ -133,7 +133,7 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
               return (
                 <div
                   key={course.id}
-                  className="bg-white rounded-3xl p-5 sm:p-6 shadow-md hover:shadow-xl border border-slate-200 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative"
+                  className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 transition-colors duration-300 flex flex-col justify-between group hover:border-[#0c2b5e]/40 relative"
                   id={`course-card-${course.id}`}
                 >
                   <div>
@@ -158,12 +158,6 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
                     >
                       {course.name}
                     </h3>
-                    <div 
-                      onClick={() => onSelectCourse(course)}
-                      className="text-xs sm:text-sm font-semibold text-amber-600 mt-0.5 mb-3 cursor-pointer"
-                    >
-                      {course.nameHindi}
-                    </div>
 
                     {/* Short Description */}
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3 mb-4">
@@ -173,7 +167,7 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
                     {/* Details Snippet */}
                     <div 
                       onClick={() => onSelectCourse(course)}
-                      className="bg-slate-50 p-3 rounded-2xl border border-slate-100 space-y-1.5 mb-4 text-xs text-slate-700 cursor-pointer hover:bg-slate-100/80 transition"
+                      className="p-3 border-y border-slate-100 space-y-1.5 mb-4 text-xs text-slate-700 cursor-pointer hover:border-slate-200 transition"
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-slate-400 font-medium">Eligibility:</span>

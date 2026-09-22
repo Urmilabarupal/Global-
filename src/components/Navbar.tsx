@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       }`}
       id="main-navigation-bar"
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 min-h-12 flex items-center justify-between gap-2">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 min-h-12 flex items-center justify-between gap-5">
         {/* Brand Logo */}
         <button 
           onClick={() => handleNavClick('home')}
@@ -71,14 +71,14 @@ export const Navbar: React.FC<NavbarProps> = ({
         </button>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden xl:flex items-center gap-1 text-sm font-semibold">
+        <div className="hidden xl:flex flex-1 items-center justify-center gap-0.5 text-[13px] font-semibold">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className={`px-3 py-1.5 rounded-lg transition-colors text-sm font-semibold ${
+                className={`px-2.5 py-2 rounded-lg transition-all text-[13px] font-semibold whitespace-nowrap ${
                   isActive 
                     ? 'text-[#0c2b5e] bg-blue-50 font-bold border-b-2 border-[#0c2b5e]' 
                     : 'text-slate-700 hover:text-[#0c2b5e] hover:bg-slate-50'
@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Right Action Buttons */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-2 shrink-0">
           {/* Instagram Reel Link */}
           <a
             href="https://www.instagram.com/balramnokhwal/"
@@ -122,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Admission Open Highlight CTA */}
           <button
             onClick={onOpenAdmission}
-            className="relative group overflow-hidden bg-gradient-to-r from-[#dc2626] to-[#b91c1c] text-white px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-1.5"
+            className="relative group overflow-hidden bg-[#dc2626] hover:bg-[#b91c1c] text-white px-3.5 py-2 rounded-lg text-xs sm:text-sm font-bold shadow-sm hover:shadow-md transition flex items-center gap-1.5"
             id="navbar-admission-open-btn"
           >
             <span className="relative flex h-2 w-2">
