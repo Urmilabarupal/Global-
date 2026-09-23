@@ -982,7 +982,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                         </select>
                         <input
                           type="text"
-                          placeholder="Image URL (e.g. /images/global_coaching_7_enhanced.jpg)"
+                          placeholder="Image URL"
                           value={newGallery.imageUrl || ''}
                           onChange={(e) => setNewGallery({ ...newGallery, imageUrl: e.target.value })}
                           className="px-3 py-2 bg-slate-50 border rounded-lg text-xs"

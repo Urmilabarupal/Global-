@@ -19,10 +19,10 @@ export const FacultyPage: React.FC<FacultyPageProps> = ({
   const cleanPhone = settings.primaryPhone1.replace(/[^0-9]/g, '');
 
   return (
-    <div className="min-h-screen bg-[#eef4fb] text-slate-900 pb-20">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Our Expert Faculty Team & Mentors"
-        subtitle="Meet the seasoned educators leading competitive examination prep in Anupgarh under the direct mentorship of Director Balram Nokhwal."
+          subtitle="Meet the seasoned educators leading competitive examination prep in Anupgarh under the direct mentorship of Director Balram Nokhwal."
         breadcrumbCurrent="Faculty Team"
         badge="10+ Years Combined Pedagogy"
         settings={settings}
@@ -33,7 +33,7 @@ export const FacultyPage: React.FC<FacultyPageProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12">
         
         {/* Daily Doubt Counter Highlight */}
-        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#d7e2f0] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 text-amber-800 text-xs font-bold rounded-full border border-amber-200">
               <Clock className="w-3.5 h-3.5 text-amber-600" />

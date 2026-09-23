@@ -45,10 +45,10 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
   });
 
   return (
-    <div className="min-h-screen bg-[#eef4fb] text-slate-900 pb-20">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="All Academic & Competitive Courses"
-        subtitle="Explore our comprehensive examination batches with 3-day free demo classes, 100% free printed study material, and Monday-Wednesday OMR test series."
+          subtitle="Explore our comprehensive examination batches with 3-day free demo classes, 100% free printed study material, and Monday-Wednesday OMR test series."
         breadcrumbCurrent="All Courses"
         badge="New Batches Every Monday"
         settings={settings}
@@ -59,7 +59,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-8">
         
         {/* Search & Category Filter Controls */}
-        <div className="bg-white rounded-2xl p-6 border border-[#d7e2f0] shadow-sm space-y-4">
+        <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
             
             {/* Search Box */}
@@ -102,10 +102,10 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
 
         {/* Courses Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCourses.map((course, index) => (
+          {filteredCourses.map((course) => (
             <div
               key={course.id}
-              className={`${index % 2 === 0 ? 'bg-white' : 'bg-[#f8fbff]'} rounded-2xl border border-[#d7e2f0] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:border-[#0c2b5e]/40`}
+              className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
             >
               <div className="p-6">
                 {/* Badges */}
@@ -123,10 +123,16 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
                 {/* Course Name */}
                 <h3 
                   onClick={() => onSelectCourse(course)}
-                  className="text-xl font-black text-slate-900 group-hover:text-[#0c2b5e] transition leading-tight cursor-pointer hover:underline mb-3"
+                  className="text-xl font-black text-slate-900 group-hover:text-[#0c2b5e] transition leading-tight cursor-pointer hover:underline"
                 >
                   {course.name}
                 </h3>
+                <div 
+                  onClick={() => onSelectCourse(course)}
+                  className="text-xs sm:text-sm font-semibold text-amber-600 mt-0.5 mb-3 cursor-pointer"
+                >
+
+                </div>
 
                 <p className="text-slate-600 text-xs sm:text-sm line-clamp-3 mb-4 leading-relaxed">
                   {course.shortDesc}
@@ -135,7 +141,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
                 {/* Key Specs */}
                 <div 
                   onClick={() => onSelectCourse(course)}
-                  className="bg-white/80 p-3 rounded-xl border border-slate-200 space-y-1.5 mb-4 text-xs text-slate-700 cursor-pointer hover:bg-white transition"
+                  className="bg-slate-50 p-3 rounded-2xl border border-slate-100 space-y-1.5 mb-4 text-xs text-slate-700 cursor-pointer hover:bg-slate-100/80 transition"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-slate-400 font-medium">Eligibility:</span>

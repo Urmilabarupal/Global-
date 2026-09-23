@@ -43,10 +43,10 @@ export const AdmissionPage: React.FC<AdmissionPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-[#eef4fb] text-slate-900 pb-20">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Online Admission & 3-Day Free Demo Registration"
-        subtitle="Register online to reserve your classroom seat, secure free printed notes, and join Anupgarh's top-rated competitive coaching batch."
+          subtitle="Register online to reserve your classroom seat, secure free printed notes, and join Anupgarh's top-rated competitive coaching batch."
         breadcrumbCurrent="Online Admission"
         badge="Direct Admission Portal"
         settings={settings}
@@ -56,7 +56,7 @@ export const AdmissionPage: React.FC<AdmissionPageProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12">
         
         {/* 4 Step Process Card */}
-        <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#d7e2f0] shadow-sm space-y-6">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-1">
             <span className="text-xs font-black uppercase text-amber-600 tracking-wider">
               Simple & Transparent

@@ -4,6 +4,7 @@ import { InstituteSettings } from '../types';
 
 interface PageBannerProps {
   title: string;
+  titleHindi?: string;
   subtitle: string;
   breadcrumbCurrent: string;
   badge?: string;
@@ -14,6 +15,7 @@ interface PageBannerProps {
 
 export const PageBanner: React.FC<PageBannerProps> = ({
   title,
+  titleHindi,
   subtitle,
   breadcrumbCurrent,
   badge,
@@ -88,6 +90,12 @@ export const PageBanner: React.FC<PageBannerProps> = ({
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
             {title}
           </h1>
+
+          {titleHindi && (
+            <div className="text-base sm:text-xl font-bold text-amber-300">
+              {titleHindi}
+            </div>
+          )}
 
           <p className="text-slate-200 text-sm sm:text-base leading-relaxed pt-1">
             {subtitle}

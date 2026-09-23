@@ -85,7 +85,7 @@ export default function App() {
   });
 
   const [gallery, setGallery] = useState<GalleryItem[]>(() => {
-    const saved = localStorage.getItem('gcc_v3_gallery_v7');
+    const saved = localStorage.getItem('gcc_v3_gallery_v5');
     return saved ? JSON.parse(saved) : INITIAL_GALLERY;
   });
 
@@ -117,7 +117,7 @@ export default function App() {
   }, [results]);
 
   useEffect(() => {
-    localStorage.setItem('gcc_v3_gallery_v7', JSON.stringify(gallery));
+    localStorage.setItem('gcc_v3_gallery_v5', JSON.stringify(gallery));
   }, [gallery]);
 
   useEffect(() => {
@@ -416,10 +416,12 @@ export default function App() {
 
           {/* 5. Comprehensive Courses Section */}
           <CoursesSection
-            courses={courses}
-            onSelectCourse={(course) => handleOpenCourseDetail(course)}
-            onEnquireCourse={(courseName) => handleOpenAdmissionWithCourse(courseName)}
-          />
+  courses={courses}
+  maxCourses={6}
+  onViewAllCourses={() => handleNavigate('courses')}
+  onSelectCourse={(course) => handleOpenCourseDetail(course)}
+  onEnquireCourse={(courseName) => handleOpenAdmissionWithCourse(courseName)}
+  />
 
           {/* 6. About Institute Section */}
           <AboutSection

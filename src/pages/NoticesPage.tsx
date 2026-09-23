@@ -19,10 +19,10 @@ export const NoticesPage: React.FC<NoticesPageProps> = ({
   onOpenAdmin
 }) => {
   return (
-    <div className="min-h-screen bg-[#eef4fb] text-slate-900 pb-20">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Official Notices, Circulars & Batch Alerts"
-        subtitle="Stay updated with new batch dates, Rajasthan government exam notifications, Monday-Wednesday test series syllabus, and campus holiday schedules."
+          subtitle="Stay updated with new batch dates, Rajasthan government exam notifications, Monday-Wednesday test series syllabus, and campus holiday schedules."
         breadcrumbCurrent="Notices & Circulars"
         badge="Official Institute Noticeboard"
         settings={settings}
@@ -31,7 +31,7 @@ export const NoticesPage: React.FC<NoticesPageProps> = ({
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12">
-        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#d7e2f0] shadow-sm">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
           <NoticesSection
             notices={notices}
             onOpenAdmin={onOpenAdmin}

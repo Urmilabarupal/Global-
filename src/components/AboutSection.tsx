@@ -30,7 +30,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <img 
-                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&auto=format&fit=crop&q=80" 
+                src="/images/about-institute-classroom.jpeg"
                 alt="Global Coaching Classes & Computer Education Campus"
                 className="w-full h-80 sm:h-96 object-cover"
               />

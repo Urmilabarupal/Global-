@@ -262,10 +262,6 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 {course.name}
               </h1>
 
-              <div className="text-base sm:text-xl font-bold text-amber-300">
-                {course.nameHindi}
-              </div>
-
               {/* Short Description */}
               <p className="text-slate-200 text-sm sm:text-base leading-relaxed max-w-3xl">
                 {course.shortDesc}
@@ -988,11 +984,9 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
             {/* Director Contact & Mentorship Card */}
             <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
               <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-                <img
-                  src="/balram-nokhwal.jpg"
-                  alt="Balram Nokhwal"
-                  className="w-12 h-12 rounded-2xl object-cover object-top flex-shrink-0 shadow-md border border-slate-200"
-                />
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0c2b5e] to-blue-700 text-white flex items-center justify-center font-black text-xl flex-shrink-0 shadow-md">
+                  BN
+                </div>
                 <div>
                   <h4 className="font-bold text-slate-900 text-base">Balram Nokhwal</h4>
                   <p className="text-xs text-amber-700 font-semibold">Founder & Director</p>

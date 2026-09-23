@@ -545,7 +545,7 @@ export const INITIAL_FACULTY: FacultyMember[] = [
     experience: "10+ Years Teaching Experience",
     qualification: "M.A., B.Ed, UGC-NET Qualified",
     bio: "Renowned mentor and educator in Anupgarh who has guided hundreds of rural and urban aspirants into government services. Known for disciplined teaching, individual doubt guidance, and comprehensive test series.",
-    photoUrl: "/balram-nokhwal.jpg",
+    photoUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=85",
     isDirector: true
   }
 ];
@@ -621,51 +621,59 @@ export const INITIAL_RESULTS: ResultItem[] = [
 
 export const INITIAL_GALLERY: GalleryItem[] = [
   {
-    id: "gal-real-1",
-    title: "मेधावी छात्र प्रतिभा सम्मान समारोह",
-    category: "Events",
-    caption: "ग्लोबल कोचिंग क्लासेज अनूपगढ़ के मुख्य बैनर तले निदेशक बलराम नोखवाल व शिक्षकों द्वारा उत्कृष्ट छात्राओं को प्रशस्ति पत्र एवं पुरस्कार भेंट।",
-    imageUrl: "/images/global_coaching_7_enhanced.jpg",
-    date: "2026"
-  },
-  {
-    id: "gal-real-2",
-    title: "सरस्वती पूजन एवं संस्थान स्थापना उत्सव",
-    category: "Celebrations",
-    caption: "मां सरस्वती वंदना, पूजन एवं संस्थान के स्थापना दिवस के पावन अवसर पर निदेशक बलराम नोखवाल व वरिष्ठ शिक्षकों द्वारा केक कटिंग।",
-    imageUrl: "/images/global_coaching_5_enhanced.jpg",
-    date: "2026"
-  },
-  {
-    id: "gal-real-3",
-    title: "वातानुकूलित आधुनिक अध्ययन कक्ष (Classroom Session)",
+    id: "real-gallery-1",
+    title: "Students in Classroom",
     category: "Classroom",
-    caption: "अनूपगढ़ परिसर में सीईटी, रीट, राजस्थान पुलिस व रेलवे की तैयारी हेतु शांत एवं अनुशासित वातानुकूलित क्लासरूम में अध्ययनरत विद्यार्थी।",
-    imageUrl: "/images/global_coaching_4_enhanced.jpg",
+    caption: "Students attending a focused classroom session at Global Coaching Classes.",
+    imageUrl: "/images/gallery-classroom.jpg",
     date: "2026"
   },
   {
-    id: "gal-real-4",
-    title: "टॉपर्स पुरस्कार एवं स्मृति चिह्न वितरण",
+    id: "real-gallery-2",
+    title: "Academic Event Presentation",
     category: "Events",
-    caption: "साप्ताहिक ओएमआर टेस्ट व प्रतियोगी परीक्षाओं में उत्कृष्ट प्रदर्शन करने वाले विद्यार्थियों को सम्मान राशि व गिफ्ट प्रदान करते हुए।",
-    imageUrl: "/images/global_coaching_2_enhanced.jpg",
+    caption: "Faculty and students participating in an institute presentation event.",
+    imageUrl: "/images/gallery-event-presentation.jpg",
     date: "2026"
   },
   {
-    id: "gal-real-5",
-    title: "निदेशक बलराम नोखवाल एवं फैकल्टी टीम",
+    id: "real-gallery-3",
+    title: "Classroom Learning Moment",
     category: "Students",
-    caption: "ग्लोबल कोचिंग क्लासेज अनूपगढ़ के निदेशक बलराम नोखवाल वरिष्ठ विषय अध्यापकों के साथ शैक्षिक योजना एवं परिणाम समीक्षा बैठक में।",
-    imageUrl: "/images/global_coaching_1_enhanced.jpg",
+    caption: "Students engaged in a classroom learning session.",
+    imageUrl: "/images/gallery-students.jpg",
     date: "2026"
   },
   {
-    id: "gal-real-6",
-    title: "महिला सशक्तिकरण एवं कालिका पेट्रोलिंग जागरूकता सेमिनार",
-    category: "Students",
-    caption: "छात्रा सुरक्षा, आत्मरक्षा एवं करियर मार्गदर्शन जागरूकता अभियान में संस्थान की छात्राओं की सक्रिय सहभागिता।",
-    imageUrl: "/images/global_coaching_3_enhanced.jpg",
+    id: "real-gallery-4",
+    title: "Balram Nokhwal at Institute Event",
+    category: "Celebrations",
+    caption: "Director Balram Nokhwal with a colleague during an institute celebration.",
+    imageUrl: "/images/gallery-balram-event.jpg",
+    date: "2026"
+  },
+  {
+    id: "real-gallery-5",
+    title: "Student Felicitation Event",
+    category: "Celebrations",
+    caption: "Students and faculty members taking part in a felicitation ceremony.",
+    imageUrl: "/images/gallery-award.jpg",
+    date: "2026"
+  },
+  {
+    id: "real-gallery-6",
+    title: "Global Coaching Classes Team",
+    category: "Faculty",
+    caption: "Institute team members together at Global Coaching Classes.",
+    imageUrl: "/images/gallery-team.jpg",
+    date: "2026"
+  },
+  {
+    id: "real-gallery-7",
+    title: "Group Presentation at Campus",
+    category: "Events",
+    caption: "A campus event with students, faculty, and the institute team.",
+    imageUrl: "/images/gallery-group-event.jpg",
     date: "2026"
   }
 ];

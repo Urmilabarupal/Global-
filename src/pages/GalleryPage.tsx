@@ -19,19 +19,19 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
   onOpenAdmin
 }) => {
   return (
-    <div className="min-h-screen bg-[#eef4fb] text-slate-900 pb-20">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
-        title="संस्थान वास्तविक फोटो गैलरी (Campus Life Gallery)"
-        subtitle="ग्लोबल कोचिंग क्लासेज अनूपगढ़ के मेधावी छात्र सम्मान समारोह, स्थापना दिवस, सरस्वती वंदना, वातानुकूलित क्लासरूम एवं महिला जागरूकता सत्र के वास्तविक फोटोग्राफ्स।"
+        title="Campus Infrastructure & Life Gallery"
+          subtitle="Take a visual tour of our spacious air-conditioned classrooms, 30+ PC RKCL computer laboratory, student celebrations, and award ceremonies in Anupgarh."
         breadcrumbCurrent="Photo Gallery"
-        badge="100% Real Campus Moments"
+        badge="Campus & Academic Moments"
         settings={settings}
         onBackToHome={onBackToHome}
         onOpenAdmission={onOpenAdmission}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12">
-        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#d7e2f0] shadow-sm">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
           <GallerySection
             gallery={gallery}
             onOpenAdmin={onOpenAdmin}

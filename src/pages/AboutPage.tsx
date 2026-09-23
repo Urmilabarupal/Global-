@@ -16,7 +16,7 @@ import {
   FileText,
   Clock
 } from 'lucide-react';
-import { DirectorPortrait } from '../components/DirectorPortrait';
+
 
 interface AboutPageProps {
   settings: InstituteSettings;
@@ -34,10 +34,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({
   const cleanPhone = settings.primaryPhone1.replace(/[^0-9]/g, '');
 
   return (
-    <div className="min-h-screen bg-[#eef4fb] text-slate-900 pb-20">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="About Global Coaching Classes & Computer Education"
-        subtitle="The premier, trusted competitive examination academy in Anupgarh (Rajasthan), dedicated to mentoring rural and town aspirants for government job selections."
+          subtitle="The premier, trusted competitive examination academy in Anupgarh (Rajasthan), dedicated to mentoring rural and town aspirants for government job selections."
         breadcrumbCurrent="About Us"
         badge="Anupgarh's Trusted Coaching"
         settings={settings}
@@ -48,14 +48,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 space-y-12">
         
         {/* Section 1: Director's Profile & Institute Genesis */}
-        <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#d7e2f0] shadow-sm">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-5 flex flex-col items-center">
-              <DirectorPortrait 
-                directorName={settings.directorName}
-                phone1={settings.primaryPhone1}
-                phone2={settings.primaryPhone2}
-                onEnquireClick={() => onOpenAdmission()}
+              <img
+                src="/images/balram-nokhwal-office.png"
+                alt="Balram Nokhwal seated at the Global Coaching Classes office"
+                className="w-full max-w-md aspect-[4/5] object-cover rounded-3xl border border-slate-200 shadow-lg"
               />
               <div className="mt-4 text-center">
                 <h3 className="text-xl font-black text-[#0c2b5e]">{settings.directorName}</h3>
@@ -75,7 +74,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-black text-[#0c2b5e]">
-                "Knowledge is the Supreme Ornament" — Education with Dedication
+                Knowledge is the Supreme Ornament
               </h2>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -107,8 +106,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
         {/* Section 2: Mission, Vision & Core Values */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#d7e2f0] shadow-sm space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#0c2b5e] flex items-center justify-center font-bold">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-blue-100 text-[#0c2b5e] flex items-center justify-center font-bold">
               <Award className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-black text-[#0c2b5e]">Our Mission</h3>
@@ -117,8 +116,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-[#f8fbff] rounded-2xl p-6 sm:p-8 border border-[#d7e2f0] shadow-sm space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
               <Sparkles className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-black text-[#0c2b5e]">Our Vision</h3>
@@ -127,8 +126,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#d7e2f0] shadow-sm space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
               <Shield className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-black text-[#0c2b5e]">Our Values</h3>
@@ -139,7 +138,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         </div>
 
         {/* Section 3: The 8 Verified Pillars of the Institute */}
-        <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#d7e2f0] shadow-sm space-y-6">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-xs font-black uppercase text-amber-600 tracking-wider">
               Institute Excellence

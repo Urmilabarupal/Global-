@@ -1,15 +1,5 @@
 import React from 'react';
-import { 
-  MapPin, 
-  Phone, 
-  MessageCircle, 
-  Clock, 
-  Navigation, 
-  Mail, 
-  Sparkles,
-  PenTool,
-  Instagram
-} from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Clock, Navigation, Sparkles, Instagram, PenTool } from 'lucide-react';
 import { InstituteSettings } from '../types';
 
 interface ContactSectionProps {
@@ -86,8 +76,25 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
               </div>
             </div>
 
-            {/* Director & Contact Numbers Box */}
-            <div className="bg-gradient-to-br from-[#071c3d] via-[#0c2b5e] to-[#164282] text-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-amber-400/40 relative overflow-hidden">
+            <div className="bg-slate-50 rounded-3xl p-6 border border-slate-200">
+              <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Contact the Institute</div>
+              <h3 className="mt-1 text-xl font-black text-[#0c2b5e]">Talk to our admissions team</h3>
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                <a href={`tel:${settings.primaryPhone1.replace(/[^0-9]/g, '')}`} className="rounded-xl bg-[#0c2b5e] px-3 py-3 text-center text-sm font-bold text-white">Call Now</a>
+                <a href={`https://wa.me/91${settings.whatsappNumber}`} target="_blank" rel="noreferrer" className="rounded-xl bg-[#15803d] px-3 py-3 text-center text-sm font-bold text-white">WhatsApp</a>
+              </div>
+            </div>
+
+            {/* Campus hours */}
+            <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 text-sm text-slate-700">
+              <div className="flex items-center gap-2 font-bold text-[#0c2b5e]">
+                <Clock className="w-4 h-4 text-amber-500" />
+                Office Hours
+              </div>
+              <p className="mt-2">Monday to Saturday, 8:00 AM to 7:00 PM</p>
+            </div>
+
+            <div className="hidden">
               <div className="flex items-center justify-between pb-4 border-b border-white/15 mb-5">
                 <div className="flex items-center gap-2">
                   <PenTool className="w-4 h-4 text-amber-400" />
