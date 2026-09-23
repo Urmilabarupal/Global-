@@ -16,7 +16,7 @@ import {
   FileText,
   Clock
 } from 'lucide-react';
-import { DirectorPortrait } from '../components/DirectorPortrait';
+
 
 interface AboutPageProps {
   settings: InstituteSettings;
@@ -51,11 +51,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-5 flex flex-col items-center">
-              <DirectorPortrait 
-                directorName={settings.directorName}
-                phone1={settings.primaryPhone1}
-                phone2={settings.primaryPhone2}
-                onEnquireClick={() => onOpenAdmission()}
+              <img
+                src="/images/balram-nokhwal-office.png"
+                alt="Balram Nokhwal seated at the Global Coaching Classes office"
+                className="w-full max-w-md aspect-[4/5] object-cover rounded-3xl border border-slate-200 shadow-lg"
               />
               <div className="mt-4 text-center">
                 <h3 className="text-xl font-black text-[#0c2b5e]">{settings.directorName}</h3>
@@ -75,7 +74,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-black text-[#0c2b5e]">
-                "ज्ञानं परमं भूषणम्" — Knowledge is the Supreme Ornament
+                Knowledge is the Supreme Ornament
               </h2>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
