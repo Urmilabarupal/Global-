@@ -44,18 +44,21 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
   const scheduleDays = [
     {
       day: 'Every Monday',
+      dayHindi: 'प्रत्येक सोमवार',
       timing: '10:00 AM - 12:00 PM',
       focus: 'General Knowledge & Current Affairs (Rajasthan GK, History, Geography, Art & Culture, National GK)',
       pattern: '100 Questions | 200 Marks | 1/3 Negative Marking | OMR Based'
     },
     {
       day: 'Every Wednesday',
+      dayHindi: 'प्रत्येक बुधवार',
       timing: '10:00 AM - 12:00 PM',
       focus: 'Mathematics, Mental Ability Reasoning & General Science (Physics, Chemistry, Biology)',
       pattern: '100 Questions | 200 Marks | Standardized OMR Evaluation'
     },
     {
       day: 'Alternate Sunday',
+      dayHindi: 'वैकल्पिक रविवार',
       timing: '09:00 AM - 12:00 PM',
       focus: 'Full-Length State-Level Mega Mock Test matching exact RSSB / RPSC final examination paper pattern',
       pattern: '150 Questions | 300 Marks | Real Examination Hall Simulation'
@@ -63,9 +66,10 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-[#eef4fb] text-slate-900 pb-20">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Regular Test Series & OMR Evaluation System"
+        titleHindi="ग्लोबल टेस्ट सीरीज — सोमवार एवं बुधवार नियमित टेस्ट"
         subtitle="Experience rigorous offline OMR testing matching RPSC & RSSB patterns with instant answer key discussions and Telegram merit lists."
         breadcrumbCurrent="Test Series"
         badge="Bi-Weekly Regular Testing"
@@ -77,7 +81,7 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 space-y-12">
         
         {/* Test Schedule Timeline */}
-        <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#d7e2f0] shadow-sm space-y-6">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-6">
           <div className="max-w-2xl mx-auto text-center space-y-2">
             <span className="text-xs font-black uppercase text-amber-600 tracking-wider">
               Systematic Evaluation Cycle
@@ -94,13 +98,13 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
             {scheduleDays.map((item, idx) => (
               <div
                 key={idx}
-                className={`${idx % 2 === 0 ? 'bg-white' : 'bg-[#f8fbff]'} rounded-2xl p-6 border border-[#d7e2f0] hover:border-[#0c2b5e]/40 transition space-y-3 shadow-xs`}
+                className="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-[#0c2b5e] transition space-y-3"
               >
                 <div className="flex items-center justify-between">
                   <span className="px-3 py-1 bg-[#0c2b5e] text-white text-xs font-bold rounded-lg">
                     {item.day}
                   </span>
-                  <span className="text-xs font-bold text-slate-500">Official Exam Hall</span>
+                  <span className="text-xs font-bold text-amber-700">{item.dayHindi}</span>
                 </div>
 
                 <div className="flex items-center gap-1.5 text-xs text-slate-500 font-semibold">

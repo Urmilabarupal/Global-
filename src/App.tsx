@@ -85,7 +85,7 @@ export default function App() {
   });
 
   const [gallery, setGallery] = useState<GalleryItem[]>(() => {
-    const saved = localStorage.getItem('gcc_v3_gallery_v7');
+    const saved = localStorage.getItem('gcc_v3_gallery_v4');
     return saved ? JSON.parse(saved) : INITIAL_GALLERY;
   });
 
@@ -117,7 +117,7 @@ export default function App() {
   }, [results]);
 
   useEffect(() => {
-    localStorage.setItem('gcc_v3_gallery_v7', JSON.stringify(gallery));
+    localStorage.setItem('gcc_v3_gallery_v4', JSON.stringify(gallery));
   }, [gallery]);
 
   useEffect(() => {

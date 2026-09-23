@@ -545,7 +545,7 @@ export const INITIAL_FACULTY: FacultyMember[] = [
     experience: "10+ Years Teaching Experience",
     qualification: "M.A., B.Ed, UGC-NET Qualified",
     bio: "Renowned mentor and educator in Anupgarh who has guided hundreds of rural and urban aspirants into government services. Known for disciplined teaching, individual doubt guidance, and comprehensive test series.",
-    photoUrl: "/balram-nokhwal.jpg",
+    photoUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=85",
     isDirector: true
   }
 ];
@@ -621,52 +621,52 @@ export const INITIAL_RESULTS: ResultItem[] = [
 
 export const INITIAL_GALLERY: GalleryItem[] = [
   {
-    id: "gal-real-1",
-    title: "मेधावी छात्र प्रतिभा सम्मान समारोह",
-    category: "Events",
-    caption: "ग्लोबल कोचिंग क्लासेज अनूपगढ़ के मुख्य बैनर तले निदेशक बलराम नोखवाल व शिक्षकों द्वारा उत्कृष्ट छात्राओं को प्रशस्ति पत्र एवं पुरस्कार भेंट।",
-    imageUrl: "/images/global_coaching_7_enhanced.jpg",
-    date: "2026"
-  },
-  {
-    id: "gal-real-2",
-    title: "सरस्वती पूजन एवं संस्थान स्थापना उत्सव",
-    category: "Celebrations",
-    caption: "मां सरस्वती वंदना, पूजन एवं संस्थान के स्थापना दिवस के पावन अवसर पर निदेशक बलराम नोखवाल व वरिष्ठ शिक्षकों द्वारा केक कटिंग।",
-    imageUrl: "/images/global_coaching_5_enhanced.jpg",
-    date: "2026"
-  },
-  {
-    id: "gal-real-3",
-    title: "वातानुकूलित आधुनिक अध्ययन कक्ष (Classroom Session)",
+    id: "gal-1",
+    title: "Focused Classroom Learning Session",
     category: "Classroom",
-    caption: "अनूपगढ़ परिसर में सीईटी, रीट, राजस्थान पुलिस व रेलवे की तैयारी हेतु शांत एवं अनुशासित वातानुकूलित क्लासरूम में अध्ययनरत विद्यार्थी।",
-    imageUrl: "/images/global_coaching_4_enhanced.jpg",
-    date: "2026"
+    caption: "Aspirants preparing for competitive examinations in our quiet, disciplined, air-cooled classrooms.",
+    imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&auto=format&fit=crop&q=80",
+    date: "Sep 2026"
   },
   {
-    id: "gal-real-4",
-    title: "टॉपर्स पुरस्कार एवं स्मृति चिह्न वितरण",
+    id: "gal-2",
+    title: "Special Guest Visit: Naresh Kumar SI (CRPF)",
     category: "Events",
-    caption: "साप्ताहिक ओएमआर टेस्ट व प्रतियोगी परीक्षाओं में उत्कृष्ट प्रदर्शन करने वाले विद्यार्थियों को सम्मान राशि व गिफ्ट प्रदान करते हुए।",
-    imageUrl: "/images/global_coaching_2_enhanced.jpg",
-    date: "2026"
+    caption: "Warm felicitation and motivational guidance session for students on the visit of Naresh Kumar SI (CRPF) to Global Coaching Classes & Computer Education.",
+    imageUrl: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=800&auto=format&fit=crop&q=80",
+    date: "Aug 2026"
   },
   {
-    id: "gal-real-5",
-    title: "निदेशक बलराम नोखवाल एवं फैकल्टी टीम",
-    category: "Students",
-    caption: "ग्लोबल कोचिंग क्लासेज अनूपगढ़ के निदेशक बलराम नोखवाल वरिष्ठ विषय अध्यापकों के साथ शैक्षिक योजना एवं परिणाम समीक्षा बैठक में।",
-    imageUrl: "/images/global_coaching_1_enhanced.jpg",
-    date: "2026"
+    id: "gal-3",
+    title: "Global Coaching Classes Campus & Academic Assembly",
+    category: "Institute Building",
+    caption: "Independence Day flag hoisting ceremony and motivational assembly at the Anupgarh campus.",
+    imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop&q=80",
+    date: "15 Aug 2026"
   },
   {
-    id: "gal-real-6",
-    title: "महिला सशक्तिकरण एवं कालिका पेट्रोलिंग जागरूकता सेमिनार",
+    id: "gal-4",
+    title: "Computer Laboratory: RS-CIT & Typing Practice",
     category: "Students",
-    caption: "छात्रा सुरक्षा, आत्मरक्षा एवं करियर मार्गदर्शन जागरूकता अभियान में संस्थान की छात्राओं की सक्रिय सहभागिता।",
-    imageUrl: "/images/global_coaching_3_enhanced.jpg",
-    date: "2026"
+    caption: "Students practicing on the RKCL RS-CIT curriculum and Hindi-English touch typing in our modern IT laboratory.",
+    imageUrl: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80",
+    date: "Jul 2026"
+  },
+  {
+    id: "gal-5",
+    title: "Weekly OMR Test Series Examination Hall",
+    category: "Classroom",
+    caption: "Disciplined exam hall atmosphere during the bi-weekly Monday and Wednesday OMR test evaluations.",
+    imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80",
+    date: "Sep 2026"
+  },
+  {
+    id: "gal-6",
+    title: "Felicitation Ceremony for Selected Students",
+    category: "Celebrations",
+    caption: "Successful candidates who cleared Rajasthan Police, REET, and CET honored and felicitated by Director Balram Nokhwal.",
+    imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
+    date: "Jun 2026"
   }
 ];
 

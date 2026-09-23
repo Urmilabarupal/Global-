@@ -20,9 +20,10 @@ export const ExamsPage: React.FC<ExamsPageProps> = ({
   onBackToHome
 }) => {
   return (
-    <div className="min-h-screen bg-[#eef4fb] text-slate-900 pb-20">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Competitive Examination Streams & Syllabus"
+        titleHindi="प्रतियोगी परीक्षा तैयारी एवं परीक्षा पैटर्न"
         subtitle="Complete subject breakdowns, official syllabus coverage, and dedicated classroom batches for Rajasthan State and Central Government exams."
         breadcrumbCurrent="Competitive Exams"
         badge="State & Central Government Prep"
@@ -34,7 +35,7 @@ export const ExamsPage: React.FC<ExamsPageProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12">
         
         {/* Exam Strategy Alert */}
-        <div className="bg-gradient-to-r from-[#0c2b5e] to-[#071c3d] text-white rounded-2xl p-6 sm:p-8 shadow-xl">
+        <div className="bg-gradient-to-r from-[#0c2b5e] to-[#071c3d] text-white rounded-3xl p-6 sm:p-8 shadow-xl">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="space-y-2">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#ffc700] text-[#071c3d] rounded-full text-xs font-black uppercase">
