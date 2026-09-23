@@ -621,52 +621,60 @@ export const INITIAL_RESULTS: ResultItem[] = [
 
 export const INITIAL_GALLERY: GalleryItem[] = [
   {
-    id: "gal-1",
-    title: "Focused Classroom Learning Session",
+    id: "real-gallery-1",
+    title: "Students in Classroom",
     category: "Classroom",
-    caption: "Aspirants preparing for competitive examinations in our quiet, disciplined, air-cooled classrooms.",
-    imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&auto=format&fit=crop&q=80",
-    date: "Sep 2026"
+    caption: "Students attending a focused classroom session at Global Coaching Classes.",
+    imageUrl: "/images/gallery-classroom.jpg",
+    date: "2026"
   },
   {
-    id: "gal-2",
-    title: "Special Guest Visit: Naresh Kumar SI (CRPF)",
+    id: "real-gallery-2",
+    title: "Academic Event Presentation",
     category: "Events",
-    caption: "Warm felicitation and motivational guidance session for students on the visit of Naresh Kumar SI (CRPF) to Global Coaching Classes & Computer Education.",
-    imageUrl: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=800&auto=format&fit=crop&q=80",
-    date: "Aug 2026"
+    caption: "Faculty and students participating in an institute presentation event.",
+    imageUrl: "/images/gallery-event-presentation.jpg",
+    date: "2026"
   },
   {
-    id: "gal-3",
-    title: "Global Coaching Classes Campus & Academic Assembly",
-    category: "Institute Building",
-    caption: "Independence Day flag hoisting ceremony and motivational assembly at the Anupgarh campus.",
-    imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop&q=80",
-    date: "15 Aug 2026"
-  },
-  {
-    id: "gal-4",
-    title: "Computer Laboratory: RS-CIT & Typing Practice",
+    id: "real-gallery-3",
+    title: "Classroom Learning Moment",
     category: "Students",
-    caption: "Students practicing on the RKCL RS-CIT curriculum and Hindi-English touch typing in our modern IT laboratory.",
-    imageUrl: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80",
-    date: "Jul 2026"
+    caption: "Students engaged in a classroom learning session.",
+    imageUrl: "/images/gallery-students.jpg",
+    date: "2026"
   },
   {
-    id: "gal-5",
-    title: "Weekly OMR Test Series Examination Hall",
-    category: "Classroom",
-    caption: "Disciplined exam hall atmosphere during the bi-weekly Monday and Wednesday OMR test evaluations.",
-    imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80",
-    date: "Sep 2026"
-  },
-  {
-    id: "gal-6",
-    title: "Felicitation Ceremony for Selected Students",
+    id: "real-gallery-4",
+    title: "Balram Nokhwal at Institute Event",
     category: "Celebrations",
-    caption: "Successful candidates who cleared Rajasthan Police, REET, and CET honored and felicitated by Director Balram Nokhwal.",
-    imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
-    date: "Jun 2026"
+    caption: "Director Balram Nokhwal with a colleague during an institute celebration.",
+    imageUrl: "/images/gallery-balram-event.jpg",
+    date: "2026"
+  },
+  {
+    id: "real-gallery-5",
+    title: "Student Felicitation Event",
+    category: "Celebrations",
+    caption: "Students and faculty members taking part in a felicitation ceremony.",
+    imageUrl: "/images/gallery-award.jpg",
+    date: "2026"
+  },
+  {
+    id: "real-gallery-6",
+    title: "Global Coaching Classes Team",
+    category: "Faculty",
+    caption: "Institute team members together at Global Coaching Classes.",
+    imageUrl: "/images/gallery-team.jpg",
+    date: "2026"
+  },
+  {
+    id: "real-gallery-7",
+    title: "Group Presentation at Campus",
+    category: "Events",
+    caption: "A campus event with students, faculty, and the institute team.",
+    imageUrl: "/images/gallery-group-event.jpg",
+    date: "2026"
   }
 ];
 
