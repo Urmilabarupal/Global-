@@ -22,8 +22,7 @@ export const FacultyPage: React.FC<FacultyPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Our Expert Faculty Team & Mentors"
-        titleHindi="ग्लोबल कोचिंग क्लासेज के अनुभवी एवं समर्पित शिक्षक"
-        subtitle="Meet the seasoned educators leading competitive examination prep in Anupgarh under the direct mentorship of Director Balram Nokhwal."
+          subtitle="Meet the seasoned educators leading competitive examination prep in Anupgarh under the direct mentorship of Director Balram Nokhwal."
         breadcrumbCurrent="Faculty Team"
         badge="10+ Years Combined Pedagogy"
         settings={settings}

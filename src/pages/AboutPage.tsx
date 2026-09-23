@@ -37,8 +37,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="About Global Coaching Classes & Computer Education"
-        titleHindi="ग्लोबल कोचिंग क्लासेज एवं कंप्यूटर एजुकेशन, अनूपगढ़"
-        subtitle="The premier, trusted competitive examination academy in Anupgarh (Rajasthan), dedicated to mentoring rural and town aspirants for government job selections."
+          subtitle="The premier, trusted competitive examination academy in Anupgarh (Rajasthan), dedicated to mentoring rural and town aspirants for government job selections."
         breadcrumbCurrent="About Us"
         badge="Anupgarh's Trusted Coaching"
         settings={settings}

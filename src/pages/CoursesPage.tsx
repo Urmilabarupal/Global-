@@ -48,8 +48,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="All Academic & Competitive Courses"
-        titleHindi="ग्लोबल कोचिंग क्लासेज के सभी प्रतियोगी पाठ्यक्रम"
-        subtitle="Explore our comprehensive examination batches with 3-day free demo classes, 100% free printed study material, and Monday-Wednesday OMR test series."
+          subtitle="Explore our comprehensive examination batches with 3-day free demo classes, 100% free printed study material, and Monday-Wednesday OMR test series."
         breadcrumbCurrent="All Courses"
         badge="New Batches Every Monday"
         settings={settings}
@@ -132,7 +131,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
                   onClick={() => onSelectCourse(course)}
                   className="text-xs sm:text-sm font-semibold text-amber-600 mt-0.5 mb-3 cursor-pointer"
                 >
-                  {course.nameHindi}
+
                 </div>
 
                 <p className="text-slate-600 text-xs sm:text-sm line-clamp-3 mb-4 leading-relaxed">

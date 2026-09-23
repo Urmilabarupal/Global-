@@ -46,8 +46,7 @@ export const AdmissionPage: React.FC<AdmissionPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Online Admission & 3-Day Free Demo Registration"
-        titleHindi="ऑनलाइन प्रवेश एवं 3 दिन की फ्री डेमो क्लास पंजीकरण"
-        subtitle="Register online to reserve your classroom seat, secure free printed notes, and join Anupgarh's top-rated competitive coaching batch."
+          subtitle="Register online to reserve your classroom seat, secure free printed notes, and join Anupgarh's top-rated competitive coaching batch."
         breadcrumbCurrent="Online Admission"
         badge="Direct Admission Portal"
         settings={settings}

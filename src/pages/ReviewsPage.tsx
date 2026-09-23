@@ -18,8 +18,7 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Student Reviews & Honest Experiences"
-        titleHindi="ग्लोबल कोचिंग क्लासेज के छात्रों के अनुभव एवं समीक्षाएं"
-        subtitle="Read real stories and ratings from students across Anupgarh and surrounding tehsils who transformed their preparation here."
+          subtitle="Read real stories and ratings from students across Anupgarh and surrounding tehsils who transformed their preparation here."
         breadcrumbCurrent="Student Reviews"
         badge="4.9 / 5 Average Rating"
         settings={settings}

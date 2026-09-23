@@ -23,8 +23,7 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Student Results & Selection Hall of Fame"
-        titleHindi="ग्लोबल कोचिंग क्लासेज के चयनित छात्र-छात्राएं"
-        subtitle="100% verified selections in Rajasthan Police, REET, Patwari, CET, VDO, Railways, and SSC from Global Coaching Classes Anupgarh."
+          subtitle="100% verified selections in Rajasthan Police, REET, Patwari, CET, VDO, Railways, and SSC from Global Coaching Classes Anupgarh."
         breadcrumbCurrent="Results & Selections"
         badge="100% Verified Government Selections"
         settings={settings}

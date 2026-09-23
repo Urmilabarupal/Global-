@@ -18,8 +18,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Contact Us & Campus Location Map"
-        titleHindi="संपर्क विवरण एवं संस्थान का पता"
-        subtitle="Visit our campus in Anupgarh or get in touch directly via telephone, WhatsApp, or Google Maps for all course counseling and admissions."
+          subtitle="Visit our campus in Anupgarh or get in touch directly via telephone, WhatsApp, or Google Maps for all course counseling and admissions."
         breadcrumbCurrent="Contact Us"
         badge="Campus Helpdesk"
         settings={settings}

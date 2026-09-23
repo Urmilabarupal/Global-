@@ -18,8 +18,7 @@ export const FAQPage: React.FC<FAQPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Frequently Asked Questions & Aspirant Helpdesk"
-        titleHindi="अक्सर पूछे जाने वाले प्रश्न एवं सहायता"
-        subtitle="Clear your doubts about admission steps, fee concessions, 3-day demo pass, hostel facilities, RS-CIT diploma, and test series schedules."
+          subtitle="Clear your doubts about admission steps, fee concessions, 3-day demo pass, hostel facilities, RS-CIT diploma, and test series schedules."
         breadcrumbCurrent="Frequently Asked Questions"
         badge="Instant Guidance"
         settings={settings}

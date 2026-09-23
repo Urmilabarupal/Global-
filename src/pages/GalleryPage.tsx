@@ -22,8 +22,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Campus Infrastructure & Life Gallery"
-        titleHindi="ग्लोबल कोचिंग क्लासेज एवं कंप्यूटर लैब की झलकियां"
-        subtitle="Take a visual tour of our spacious air-conditioned classrooms, 30+ PC RKCL computer laboratory, student celebrations, and award ceremonies in Anupgarh."
+          subtitle="Take a visual tour of our spacious air-conditioned classrooms, 30+ PC RKCL computer laboratory, student celebrations, and award ceremonies in Anupgarh."
         breadcrumbCurrent="Photo Gallery"
         badge="Campus & Academic Moments"
         settings={settings}

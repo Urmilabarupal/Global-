@@ -23,8 +23,7 @@ export const ExamsPage: React.FC<ExamsPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Competitive Examination Streams & Syllabus"
-        titleHindi="प्रतियोगी परीक्षा तैयारी एवं परीक्षा पैटर्न"
-        subtitle="Complete subject breakdowns, official syllabus coverage, and dedicated classroom batches for Rajasthan State and Central Government exams."
+          subtitle="Complete subject breakdowns, official syllabus coverage, and dedicated classroom batches for Rajasthan State and Central Government exams."
         breadcrumbCurrent="Competitive Exams"
         badge="State & Central Government Prep"
         settings={settings}

@@ -22,8 +22,7 @@ export const NoticesPage: React.FC<NoticesPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Official Notices, Circulars & Batch Alerts"
-        titleHindi="ग्लोबल कोचिंग संस्थान के नवीनतम नोटिस एवं सूचनाएं"
-        subtitle="Stay updated with new batch dates, Rajasthan government exam notifications, Monday-Wednesday test series syllabus, and campus holiday schedules."
+          subtitle="Stay updated with new batch dates, Rajasthan government exam notifications, Monday-Wednesday test series syllabus, and campus holiday schedules."
         breadcrumbCurrent="Notices & Circulars"
         badge="Official Institute Noticeboard"
         settings={settings}

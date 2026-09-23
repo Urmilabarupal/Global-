@@ -262,10 +262,6 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 {course.name}
               </h1>
 
-              <div className="text-base sm:text-xl font-bold text-amber-300">
-                {course.nameHindi}
-              </div>
-
               {/* Short Description */}
               <p className="text-slate-200 text-sm sm:text-base leading-relaxed max-w-3xl">
                 {course.shortDesc}

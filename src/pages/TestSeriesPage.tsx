@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { PageBanner } from '../components/PageBanner';
 import { InstituteSettings } from '../types';
 import { 
@@ -8,13 +8,9 @@ import {
   BarChart3, 
   FileCheck2, 
   Award, 
-  PhoneCall, 
-  Sparkles, 
   CheckCircle,
   FileText,
-  Users,
-  Send,
-  Check
+  Users
 } from 'lucide-react';
 
 interface TestSeriesPageProps {
@@ -28,38 +24,22 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
   onBackToHome,
   onOpenAdmission
 }) => {
-  const [selectedExam, setSelectedExam] = useState('Rajasthan CET (12th & Graduation)');
-  const [registered, setRegistered] = useState(false);
-  const [studentMobile, setStudentMobile] = useState('');
-  const [studentName, setStudentName] = useState('');
-
-  const cleanPhone = settings.primaryPhone1.replace(/[^0-9]/g, '');
-
-  const handleTestSeriesEnroll = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!studentName.trim() || !studentMobile.trim()) return;
-    setRegistered(true);
-  };
-
   const scheduleDays = [
     {
       day: 'Every Monday',
-      dayHindi: 'प्रत्येक सोमवार',
-      timing: '10:00 AM - 12:00 PM',
+        timing: '10:00 AM - 12:00 PM',
       focus: 'General Knowledge & Current Affairs (Rajasthan GK, History, Geography, Art & Culture, National GK)',
       pattern: '100 Questions | 200 Marks | 1/3 Negative Marking | OMR Based'
     },
     {
       day: 'Every Wednesday',
-      dayHindi: 'प्रत्येक बुधवार',
-      timing: '10:00 AM - 12:00 PM',
+        timing: '10:00 AM - 12:00 PM',
       focus: 'Mathematics, Mental Ability Reasoning & General Science (Physics, Chemistry, Biology)',
       pattern: '100 Questions | 200 Marks | Standardized OMR Evaluation'
     },
     {
       day: 'Alternate Sunday',
-      dayHindi: 'वैकल्पिक रविवार',
-      timing: '09:00 AM - 12:00 PM',
+        timing: '09:00 AM - 12:00 PM',
       focus: 'Full-Length State-Level Mega Mock Test matching exact RSSB / RPSC final examination paper pattern',
       pattern: '150 Questions | 300 Marks | Real Examination Hall Simulation'
     }
@@ -69,8 +49,7 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <PageBanner
         title="Regular Test Series & OMR Evaluation System"
-        titleHindi="ग्लोबल टेस्ट सीरीज — सोमवार एवं बुधवार नियमित टेस्ट"
-        subtitle="Experience rigorous offline OMR testing matching RPSC & RSSB patterns with instant answer key discussions and Telegram merit lists."
+          subtitle="Experience rigorous offline OMR testing matching RPSC & RSSB patterns with instant answer key discussions and Telegram merit lists."
         breadcrumbCurrent="Test Series"
         badge="Bi-Weekly Regular Testing"
         settings={settings}
@@ -104,8 +83,7 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
                   <span className="px-3 py-1 bg-[#0c2b5e] text-white text-xs font-bold rounded-lg">
                     {item.day}
                   </span>
-                  <span className="text-xs font-bold text-amber-700">{item.dayHindi}</span>
-                </div>
+                                 </div>
 
                 <div className="flex items-center gap-1.5 text-xs text-slate-500 font-semibold">
                   <Clock className="w-3.5 h-3.5 text-slate-400" />
@@ -170,88 +148,6 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
               </div>
             );
           })}
-        </div>
-
-        {/* Test Series Registration Card */}
-        <div className="bg-gradient-to-r from-[#0c2b5e] to-[#071c3d] text-white rounded-3xl p-6 sm:p-10 shadow-xl">
-          <div className="max-w-2xl mx-auto text-center space-y-6">
-            <div className="space-y-2">
-              <span className="text-xs font-black uppercase text-[#ffc700] tracking-wider">
-                Open for Regular & External Aspirants
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-black text-white">
-                Join Global Coaching Test Series Program
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-300">
-                Regular classroom students receive full test series automatically included. External self-study candidates can also enroll for Monday & Wednesday test packages.
-              </p>
-            </div>
-
-            {registered ? (
-              <div className="p-6 bg-emerald-950/80 border border-emerald-500/50 rounded-2xl space-y-2">
-                <Check className="w-8 h-8 text-emerald-400 mx-auto" />
-                <h4 className="text-lg font-bold text-emerald-200">Registration Received!</h4>
-                <p className="text-xs text-slate-300">
-                  We will share the upcoming Monday test syllabus with you on <strong>{studentMobile}</strong>.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleTestSeriesEnroll} className="space-y-4 max-w-md mx-auto text-left">
-                <div>
-                  <label className="block text-xs font-bold text-slate-300 mb-1">Your Full Name</label>
-                  <input
-                    type="text"
-                    required
-                    value={studentName}
-                    onChange={e => setStudentName(e.target.value)}
-                    placeholder="Enter full name"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#ffc700]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-slate-300 mb-1">WhatsApp Number</label>
-                  <input
-                    type="tel"
-                    required
-                    value={studentMobile}
-                    onChange={e => setStudentMobile(e.target.value)}
-                    placeholder="e.g. 94130XXXXX"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#ffc700]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-slate-300 mb-1">Target Examination Stream</label>
-                  <select
-                    value={selectedExam}
-                    onChange={e => setSelectedExam(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#0c2b5e] border border-white/20 text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#ffc700]"
-                  >
-                    <option value="Rajasthan CET (12th & Graduation)">Rajasthan CET (12th & Graduation)</option>
-                    <option value="REET (Level-1 & Level-2)">REET (Level-1 & Level-2)</option>
-                    <option value="Rajasthan Police Constable">Rajasthan Police Constable</option>
-                    <option value="SSC GD, CGL, CHSL">SSC GD, CGL, CHSL</option>
-                    <option value="Patwari, VDO & Railways">Patwari, VDO & Railways</option>
-                  </select>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-3 bg-[#ffc700] hover:bg-amber-400 text-[#071c3d] font-black text-xs sm:text-sm rounded-xl shadow-lg transition flex items-center justify-center gap-2"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>Register for Test Series Syllabus</span>
-                </button>
-              </form>
-            )}
-
-            <div className="pt-2 text-xs text-slate-400 flex items-center justify-center gap-4">
-              <span>Director Helpline: <strong className="text-white">{settings.primaryPhone1}</strong></span>
-              <span>•</span>
-              <a href={`tel:${cleanPhone}`} className="text-[#ffc700] hover:underline font-bold">Call Now</a>
-            </div>
-          </div>
         </div>
 
       </div>
