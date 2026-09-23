@@ -24,6 +24,7 @@ import {
   Compass,
   AlertCircle
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { Course, InstituteSettings, AdmissionEnquiry } from '../types';
 
 interface CourseDetailPageProps {
@@ -188,40 +189,40 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
       
       {/* Top Breadcrumbs & Back Navigation Bar */}
       <div className="bg-white border-b border-slate-200 sticky top-16 z-30 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-xs sm:text-sm">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm min-w-0">
             <button
               onClick={onBack}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-[#0c2b5e] text-slate-700 hover:text-white font-bold transition"
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-100 hover:bg-[#0c2b5e] text-slate-700 hover:text-white font-bold transition shrink-0"
               id="course-detail-back-btn"
             >
-              <ArrowLeft className="w-4 h-4" />
-              <span>Back to Courses</span>
+              <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span>Back</span>
             </button>
 
             <span className="text-slate-300">/</span>
             <span className="text-slate-500 hidden sm:inline">{course.category}</span>
             <span className="text-slate-300 hidden sm:inline">/</span>
-            <span className="font-bold text-[#0c2b5e] truncate max-w-[200px] sm:max-w-xs">{course.name}</span>
+            <span className="font-bold text-[#0c2b5e] truncate max-w-[150px] sm:max-w-xs">{course.name}</span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={handleShare}
-              className="inline-flex items-center gap-1 text-xs font-bold text-slate-600 hover:text-[#0c2b5e] bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-xl transition"
+              className="inline-flex items-center gap-1 text-xs font-bold text-slate-600 hover:text-[#0c2b5e] bg-slate-100 hover:bg-slate-200 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl transition"
               id="course-share-btn"
             >
               <Share2 className="w-3.5 h-3.5" />
-              <span>{copiedLink ? 'Link Copied!' : 'Share'}</span>
+              <span>{copiedLink ? 'Copied!' : 'Share'}</span>
             </button>
 
             <a
-              href={`https://wa.me/${settings.whatsappNumber}?text=${whatsappMessage}`}
+              href={`https://wa.me/91${settings.whatsappNumber}?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-3 py-1.5 rounded-xl transition"
+              className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl transition"
             >
-              <MessageCircle className="w-3.5 h-3.5" />
+              <WhatsAppIcon className="w-3.5 h-3.5 fill-emerald-600" />
               <span className="hidden sm:inline">WhatsApp Help</span>
             </a>
           </div>
@@ -229,11 +230,11 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
       </div>
 
       {/* Hero Header Section */}
-      <section className="bg-gradient-to-r from-[#071c3d] via-[#0c2b5e] to-[#164282] text-white py-12 md:py-16 relative overflow-hidden">
+      <section className="bg-gradient-to-r from-[#071c3d] via-[#0c2b5e] to-[#164282] text-white py-8 sm:py-12 md:py-16 relative overflow-hidden">
         {/* Background Subtle Patterns */}
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffc700_1px,transparent_1px)] [background-size:16px_16px]" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Col: Course Main Details */}
@@ -390,8 +391,8 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
       {/* Interactive Tabs Strip */}
       <div className="bg-white border-b border-slate-200 shadow-xs sticky top-28 z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-2 overflow-x-auto py-3 scrollbar-none">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto py-2.5 sm:py-3 scrollbar-none">
             {[
               { id: 'overview', label: 'Overview & Features', icon: BookOpen },
               { id: 'syllabus', label: 'Complete Syllabus', icon: FileText },
@@ -406,14 +407,14 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition ${
+                  className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition min-h-[34px] ${
                     isActive
-                      ? 'bg-[#0c2b5e] text-white shadow-md'
+                      ? 'bg-[#0c2b5e] text-white shadow-xs'
                       : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                   }`}
                   id={`course-tab-${tab.id}`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>{tab.label}</span>
                 </button>
               );
@@ -423,8 +424,8 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
       </div>
 
       {/* Main Content Body */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
           
           {/* Main Content Area (8 Cols) */}
           <div className="lg:col-span-8 space-y-8">

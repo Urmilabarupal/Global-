@@ -1,5 +1,6 @@
 import React from 'react';
-import { Phone, MessageCircle, Sparkles } from 'lucide-react';
+import { Phone, Sparkles } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { InstituteSettings } from '../types';
 
 interface MobileQuickBarProps {
@@ -28,10 +29,11 @@ export const MobileQuickBar: React.FC<MobileQuickBarProps> = ({
         href={`https://wa.me/91${settings.whatsappNumber}?text=Hello%20Global%20Coaching%20Classes%20Anupgarh,%20I%20want%20information%20regarding%20courses%20and%20admission.`}
         target="_blank"
         rel="noreferrer"
-        className="flex-1 py-2.5 px-2 bg-[#15803d] hover:bg-emerald-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition shadow"
+        className="flex-1 py-2.5 px-2 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition shadow"
         id="mobile-quick-whatsapp-btn"
+        aria-label="WhatsApp Chat"
       >
-        <MessageCircle className="w-4 h-4 flex-shrink-0" />
+        <WhatsAppIcon className="w-5 h-5 fill-white flex-shrink-0" />
         <span className="truncate">WhatsApp</span>
       </a>
 

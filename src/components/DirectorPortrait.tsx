@@ -34,8 +34,9 @@ export const DirectorPortrait: React.FC<DirectorPortraitProps> = ({
         {/* Director Photo Frame */}
         <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-gradient-to-b from-slate-100 via-blue-50 to-[#0c2b5e]/10">
           <img 
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=85" 
+            src="/images/balram-nokhwal-office.png" 
             alt={`Director ${directorName} - Global Coaching Classes Anupgarh`}
+            referrerPolicy="no-referrer"
             className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
             loading="eager"
           />
@@ -48,8 +49,8 @@ export const DirectorPortrait: React.FC<DirectorPortraitProps> = ({
             <p className="text-white text-sm font-semibold drop-shadow-md">
               "Right direction leads to certain success..."
             </p>
-            <p className="text-amber-300 text-xs font-medium drop-shadow">
-              Continuous practice and dedicated mentorship!
+            <p className="text-amber-300 text-xs font-bold drop-shadow">
+              UGC NET & SET Qualified • 6 Years Teaching Experience
             </p>
           </div>
         </div>
@@ -58,13 +59,13 @@ export const DirectorPortrait: React.FC<DirectorPortraitProps> = ({
         <div className="mt-3 p-3 bg-gradient-to-r from-amber-50 via-yellow-100 to-amber-50 rounded-2xl border border-amber-300 flex flex-col items-center text-center shadow-inner">
           <div className="inline-flex items-center gap-2 bg-[#ffc700] text-[#071c3d] px-4 py-1 rounded-full text-xs font-extrabold shadow-sm border border-amber-400 uppercase tracking-wider">
             <PenTool className="w-3.5 h-3.5 text-[#071c3d]" />
-            <span>Director</span>
+            <span>Director - {directorName}</span>
           </div>
           <h3 className="mt-1.5 text-2xl font-black text-[#0c2b5e] tracking-tight">
             {directorName}
           </h3>
-          <p className="text-xs text-slate-700 font-medium mt-0.5">
-            Competitive Exam Mentor & Career Counselor, Anupgarh
+          <p className="text-xs text-slate-700 font-bold mt-0.5">
+            B.Ed. | M.A. (Hindi & Geography) | UGC NET & SET
           </p>
 
           {/* Quick Contact Buttons */}

@@ -11,6 +11,7 @@ import { InstituteSettings } from '../types';
 interface FAQSectionProps {
   settings: InstituteSettings;
   onEnquireClick: () => void;
+  hideHeader?: boolean;
 }
 
 interface FAQItem {
@@ -77,7 +78,7 @@ const FAQ_ITEMS: FAQItem[] = [
   }
 ];
 
-export const FAQSection: React.FC<FAQSectionProps> = () => {
+export const FAQSection: React.FC<FAQSectionProps> = ({ hideHeader = false }) => {
   const [openId, setOpenId] = useState<string | null>('faq-1');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -99,43 +100,45 @@ export const FAQSection: React.FC<FAQSectionProps> = () => {
   };
 
   return (
-    <section id="faq" className="py-16 md:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="faq" className={`${hideHeader ? 'py-1 sm:py-4' : 'py-10 sm:py-16 md:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50'} relative`}>
+      <div className="max-w-6xl mx-auto px-1 sm:px-4 md:px-6">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-900 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider mb-3 border border-amber-300">
-            <HelpCircle className="w-4 h-4 text-amber-600" />
-            <span>Frequently Asked Questions</span>
+        {!hideHeader && (
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
+            <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-900 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider mb-2 sm:mb-3 border border-amber-300">
+              <HelpCircle className="w-4 h-4 text-amber-600" />
+              <span>Frequently Asked Questions</span>
+            </div>
+
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#0c2b5e] tracking-tight leading-tight">
+              Got Questions? We Have Answers
+            </h2>
+            <div className="w-20 sm:w-24 h-1.5 bg-[#ffc700] mx-auto mt-2 sm:mt-3 rounded-full" />
+
+            <p className="mt-3 sm:mt-4 text-slate-600 text-xs sm:text-base leading-relaxed">
+              Everything you need to know about admissions, batch timings, test series, study materials, and career guidance under Director Balram Nokhwal.
+            </p>
           </div>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0c2b5e] tracking-tight">
-            Got Questions? We Have Answers
-          </h2>
-          <div className="w-24 h-1.5 bg-[#ffc700] mx-auto mt-3 rounded-full" />
-
-          <p className="mt-4 text-slate-600 text-sm sm:text-base">
-            Everything you need to know about admissions, batch timings, test series, study materials, and career guidance under Director Balram Nokhwal.
-          </p>
-        </div>
+        )}
 
         {/* Search & Category Filter */}
-        <div className="mb-8 space-y-4">
+        <div className="mb-5 sm:mb-8 space-y-3 sm:space-y-4">
           {/* Search Box */}
           <div className="relative max-w-xl mx-auto">
-            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search questions (e.g., demo class, Monday test, fees, RS-CIT)..."
-              className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl shadow-sm text-sm focus:outline-none focus:border-[#0c2b5e] focus:ring-2 focus:ring-blue-100 transition"
+              placeholder="Search questions (e.g. demo, test, fees, RS-CIT)..."
+              className="w-full pl-10 pr-12 py-2 sm:py-2.5 bg-white border border-slate-200 rounded-xl sm:rounded-2xl shadow-xs text-xs sm:text-sm focus:outline-none focus:border-[#0c2b5e] focus:ring-2 focus:ring-blue-100 transition"
               id="faq-search-input"
             />
             {searchQuery && (
               <button 
                 onClick={() => setSearchQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 hover:text-slate-600"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 hover:text-slate-600"
               >
                 Clear
               </button>
@@ -143,14 +146,14 @@ export const FAQSection: React.FC<FAQSectionProps> = () => {
           </div>
 
           {/* Category Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none sm:flex-wrap sm:justify-center pt-1 sm:pt-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition ${
+                className={`px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition ${
                   selectedCategory === cat 
-                    ? 'bg-[#0c2b5e] text-white shadow-md' 
+                    ? 'bg-[#0c2b5e] text-white shadow-xs' 
                     : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
                 }`}
                 id={`faq-category-${cat.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
@@ -162,15 +165,15 @@ export const FAQSection: React.FC<FAQSectionProps> = () => {
         </div>
 
         {/* FAQ Accordion List */}
-        <div className="space-y-3 max-w-4xl mx-auto">
+        <div className="space-y-2.5 sm:space-y-3 max-w-4xl mx-auto">
           {filteredFaqs.length === 0 ? (
-            <div className="text-center py-12 bg-white rounded-2xl border border-slate-200 p-8">
-              <HelpCircle className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-              <p className="text-base font-bold text-slate-800">No questions found matching your search.</p>
+            <div className="text-center py-8 sm:py-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8">
+              <HelpCircle className="w-10 h-10 sm:w-12 sm:h-12 text-slate-300 mx-auto mb-2 sm:mb-3" />
+              <p className="text-sm sm:text-base font-bold text-slate-800">No questions found matching your search.</p>
               <p className="text-xs text-slate-500 mt-1">Try a different keyword or contact our counselors directly.</p>
               <button
                 onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
-                className="mt-4 px-4 py-2 bg-[#0c2b5e] text-white text-xs font-bold rounded-xl"
+                className="mt-3 sm:mt-4 px-4 py-2 bg-[#0c2b5e] text-white text-xs font-bold rounded-xl"
               >
                 Reset Search
               </button>
@@ -181,18 +184,18 @@ export const FAQSection: React.FC<FAQSectionProps> = () => {
               return (
                 <div
                   key={faq.id}
-                  className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
-                    isOpen ? 'border-[#0c2b5e] shadow-md ring-1 ring-blue-100' : 'border-slate-200 hover:border-slate-300'
+                  className={`bg-white rounded-xl sm:rounded-2xl border transition-all duration-200 overflow-hidden ${
+                    isOpen ? 'border-[#0c2b5e] shadow-xs ring-1 ring-blue-100' : 'border-slate-200 hover:border-slate-300'
                   }`}
                 >
                   <button
                     onClick={() => toggleFAQ(faq.id)}
-                    className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 transition"
+                    className="w-full text-left p-3.5 sm:p-5 flex items-center justify-between gap-3 sm:gap-4 transition"
                     id={`faq-toggle-${faq.id}`}
                     aria-expanded={isOpen}
                   >
-                    <div className="flex items-start gap-3">
-                      <div className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5 ${
+                    <div className="flex items-start gap-2.5 sm:gap-3">
+                      <div className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center text-[11px] sm:text-xs font-black flex-shrink-0 mt-0.5 ${
                         isOpen ? 'bg-[#0c2b5e] text-white' : 'bg-slate-100 text-slate-700'
                       }`}>
                         {idx + 1}
@@ -201,21 +204,21 @@ export const FAQSection: React.FC<FAQSectionProps> = () => {
                         <span className="text-[10px] uppercase tracking-wider font-bold text-amber-600">
                           {faq.category}
                         </span>
-                        <h3 className="font-bold text-slate-900 text-sm sm:text-base mt-0.5">
+                        <h3 className="font-bold text-slate-900 text-xs sm:text-base mt-0.5 leading-snug">
                           {faq.question}
                         </h3>
                       </div>
                     </div>
 
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
+                    <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
                       isOpen ? 'rotate-180 bg-blue-50 text-[#0c2b5e]' : 'bg-slate-50 text-slate-400'
                     }`}>
-                      <ChevronDown className="w-4 h-4" />
+                      <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pl-14">
+                    <div className="px-3.5 pb-3.5 pt-1 sm:px-5 sm:pb-5 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pl-11 sm:pl-14">
                       <p>{faq.answer}</p>
                     </div>
                   )}

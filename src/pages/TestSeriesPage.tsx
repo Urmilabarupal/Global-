@@ -57,15 +57,15 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
         onOpenAdmission={() => onOpenAdmission('Regular Test Series')}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 space-y-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-12 space-y-6 sm:space-y-12">
         
         {/* Test Schedule Timeline */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-6">
-          <div className="max-w-2xl mx-auto text-center space-y-2">
-            <span className="text-xs font-black uppercase text-amber-600 tracking-wider">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-10 border border-slate-200 shadow-sm space-y-4 sm:space-y-6">
+          <div className="max-w-2xl mx-auto text-center space-y-1 sm:space-y-2">
+            <span className="text-[10px] sm:text-xs font-black uppercase text-amber-600 tracking-wider">
               Systematic Evaluation Cycle
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#0c2b5e]">
+            <h2 className="text-xl sm:text-3xl font-black text-[#0c2b5e] leading-tight">
               Monday & Wednesday Weekly Test Calendar
             </h2>
             <p className="text-xs sm:text-sm text-slate-500">
@@ -73,20 +73,20 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-6">
             {scheduleDays.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-[#0c2b5e] transition space-y-3"
+                className="bg-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 hover:border-[#0c2b5e] transition space-y-2.5 sm:space-y-3"
               >
                 <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 bg-[#0c2b5e] text-white text-xs font-bold rounded-lg">
+                  <span className="px-2.5 py-1 bg-[#0c2b5e] text-white text-xs font-bold rounded-lg">
                     {item.day}
                   </span>
-                                 </div>
+                </div>
 
                 <div className="flex items-center gap-1.5 text-xs text-slate-500 font-semibold">
-                  <Clock className="w-3.5 h-3.5 text-slate-400" />
+                  <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   <span>{item.timing}</span>
                 </div>
 
@@ -104,7 +104,7 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
         </div>
 
         {/* 6 Key Benefits of Test Series */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
           {[
             {
               title: 'Real OMR Sheet Practice',
@@ -139,11 +139,11 @@ export const TestSeriesPage: React.FC<TestSeriesPageProps> = ({
           ].map((feat, fidx) => {
             const Icon = feat.icon;
             return (
-              <div key={fidx} className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0c2b5e] flex items-center justify-center font-bold">
-                  <Icon className="w-5 h-5" />
+              <div key={fidx} className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-sm space-y-2 sm:space-y-3">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-50 text-[#0c2b5e] flex items-center justify-center font-bold">
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <h4 className="font-bold text-slate-900 text-base">{feat.title}</h4>
+                <h4 className="font-bold text-slate-900 text-sm sm:text-base">{feat.title}</h4>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{feat.desc}</p>
               </div>
             );

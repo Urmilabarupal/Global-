@@ -8,14 +8,6 @@ interface AnnouncementBarProps {
 }
 
 export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({ settings, onAdmissionClick }) => {
-  const [isHidden, setIsHidden] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsHidden(window.scrollY > 24);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   // Ticker items for seamless auto-scrolling with day-wise schedule
   const tickerItems = [
     {
@@ -52,7 +44,7 @@ export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({ settings, onAd
 
   return (
     <div 
-      className={`bg-[#071c3d] text-slate-100 border-b border-blue-900/60 h-8 sm:h-9 sticky top-0 z-50 shadow-sm flex items-center overflow-hidden select-none transition-all duration-200 ${isHidden ? '-translate-y-full opacity-0 pointer-events-none' : 'translate-y-0'}`}
+      className="bg-[#071c3d] text-slate-100 border-b border-blue-900/60 h-8 sm:h-9 relative z-30 shadow-xs flex items-center overflow-hidden select-none"
       id="announcement-bar"
     >
       <div className="w-full flex items-center h-full">

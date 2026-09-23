@@ -26,11 +26,12 @@ export const FAQPage: React.FC<FAQPageProps> = ({
         onOpenAdmission={() => onOpenAdmission('FAQ Page Enquiry')}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12">
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-5 sm:py-10 space-y-6 sm:space-y-12">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 md:p-8 border border-slate-200 shadow-sm">
           <FAQSection
             settings={settings}
             onEnquireClick={() => onOpenAdmission()}
+            hideHeader={true}
           />
         </div>
       </div>

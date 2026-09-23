@@ -30,12 +30,14 @@ export const NoticesPage: React.FC<NoticesPageProps> = ({
         onOpenAdmission={() => onOpenAdmission('Notice Enquiry')}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12">
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-12">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 md:p-8 border border-slate-200 shadow-sm">
           <NoticesSection
             notices={notices}
             onOpenAdmin={onOpenAdmin}
             onEnquireClick={() => onOpenAdmission()}
+            hideHeader={true}
+            hideAdminButton={true}
           />
         </div>
       </div>

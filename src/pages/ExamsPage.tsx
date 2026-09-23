@@ -31,17 +31,17 @@ export const ExamsPage: React.FC<ExamsPageProps> = ({
         onOpenAdmission={() => onOpenAdmission()}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-10">
         
         {/* Exam Strategy Alert */}
-        <div className="bg-gradient-to-r from-[#0c2b5e] to-[#071c3d] text-white rounded-3xl p-6 sm:p-8 shadow-xl">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="bg-gradient-to-r from-[#0c2b5e] to-[#071c3d] text-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-xl">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-6">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#ffc700] text-[#071c3d] rounded-full text-xs font-black uppercase">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-[#ffc700] text-[#071c3d] rounded-full text-[10px] sm:text-xs font-black uppercase">
+                <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 <span>RSSB & RPSC Master Strategy</span>
               </div>
-              <h3 className="text-2xl font-black text-white">
+              <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
                 How We Train Aspirants to Beat 1/3 Negative Marking
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
@@ -51,7 +51,7 @@ export const ExamsPage: React.FC<ExamsPageProps> = ({
 
             <button
               onClick={() => onOpenAdmission('Exam Demo Batch')}
-              className="px-6 py-3 bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-md whitespace-nowrap"
+              className="w-full md:w-auto px-5 sm:px-6 py-3 bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-md whitespace-nowrap text-center"
             >
               Enroll in Exam Batch
             </button>
@@ -59,7 +59,7 @@ export const ExamsPage: React.FC<ExamsPageProps> = ({
         </div>
 
         {/* The Full Interactive ExamPreparation Component */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 md:p-8 border border-slate-200 shadow-sm">
           <ExamPreparation
             onExamClick={(examName) => onOpenAdmission(examName)}
             onViewCourseDetail={(courseId) => {

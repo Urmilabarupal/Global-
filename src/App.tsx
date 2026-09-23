@@ -33,9 +33,8 @@ import { FAQSection } from './components/FAQSection';
 import { AdmissionEnquirySection } from './components/AdmissionEnquirySection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { MobileQuickBar } from './components/MobileQuickBar';
 import { AdminPanel } from './components/admin/AdminPanel';
-import { MessageCircle } from 'lucide-react';
+import { WhatsAppIcon } from './components/WhatsAppIcon';
 
 // Dedicated Standalone Pages
 import { AboutPage } from './pages/AboutPage';
@@ -85,8 +84,7 @@ export default function App() {
   });
 
   const [gallery, setGallery] = useState<GalleryItem[]>(() => {
-    const saved = localStorage.getItem('gcc_v3_gallery_v5');
-    return saved ? JSON.parse(saved) : INITIAL_GALLERY;
+    return INITIAL_GALLERY;
   });
 
   const [notices, setNotices] = useState<NoticeItem[]>(() => {
@@ -474,22 +472,16 @@ export default function App() {
         onOpenAdmin={() => setIsAdminOpen(true)}
       />
 
-      {/* 18. Sticky Mobile Bottom Quick Action Bar */}
-      <MobileQuickBar
-        settings={settings}
-        onOpenAdmission={() => handleOpenAdmissionWithCourse()}
-      />
-
-      {/* 19. Floating WhatsApp Button for Desktop */}
+      {/* 18. Floating Sticky WhatsApp Button */}
       <a
         href={`https://wa.me/91${settings.whatsappNumber}?text=Hello%20Global%20Coaching%20Classes%20Anupgarh,%20I%20want%20information%20regarding%20courses%20and%20admission.`}
         target="_blank"
         rel="noreferrer"
-        className="hidden md:flex fixed bottom-6 right-6 z-40 bg-[#15803d] hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-2xl items-center justify-center transition-transform hover:scale-110 border-2 border-white group"
+        className="fixed bottom-6 right-4 md:right-6 z-40 bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 sm:p-4 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 border-2 border-white group drop-shadow-xl"
         aria-label="Chat on WhatsApp"
         id="desktop-floating-whatsapp"
       >
-        <MessageCircle className="w-7 h-7" />
+        <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7 fill-white flex-shrink-0" />
         <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap group-hover:pl-2 text-xs font-bold">
           Chat with us on WhatsApp
         </span>

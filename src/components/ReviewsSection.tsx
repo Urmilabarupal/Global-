@@ -108,7 +108,11 @@ const INITIAL_REVIEWS: StudentReview[] = [
   }
 ];
 
-export const ReviewsSection: React.FC = () => {
+interface ReviewsSectionProps {
+  hideHeader?: boolean;
+}
+
+export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ hideHeader = false }) => {
   const [reviews, setReviews] = useState<StudentReview[]>(() => {
     const saved = localStorage.getItem('gcc_student_reviews_v3');
     return saved ? JSON.parse(saved) : INITIAL_REVIEWS;
@@ -174,82 +178,84 @@ export const ReviewsSection: React.FC = () => {
   };
 
   return (
-    <section id="reviews" className="py-16 md:py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="reviews" className={`${hideHeader ? 'py-1 sm:py-4' : 'py-10 sm:py-16 md:py-24 bg-white'} relative`}>
+      <div className="max-w-7xl mx-auto px-1 sm:px-4 md:px-6">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-800 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider mb-3 border border-emerald-200">
-            <Star className="w-4 h-4 text-emerald-600 fill-emerald-600" />
-            <span>Student Experiences & Testimonials</span>
+        {!hideHeader && (
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
+            <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-800 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider mb-2 sm:mb-3 border border-emerald-200">
+              <Star className="w-4 h-4 text-emerald-600 fill-emerald-600" />
+              <span>Student Experiences & Testimonials</span>
+            </div>
+
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#0c2b5e] tracking-tight leading-tight">
+              Trusted by Thousands of Aspirants
+            </h2>
+            <div className="w-20 sm:w-24 h-1.5 bg-[#ffc700] mx-auto mt-2 sm:mt-3 rounded-full" />
+
+            <p className="mt-3 sm:mt-4 text-slate-600 text-xs sm:text-base leading-relaxed">
+              Read real feedback and success journeys from students who cracked competitive examinations under the mentorship of Director Balram Nokhwal.
+            </p>
           </div>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0c2b5e] tracking-tight">
-            Trusted by Thousands of Aspirants
-          </h2>
-          <div className="w-24 h-1.5 bg-[#ffc700] mx-auto mt-3 rounded-full" />
-
-          <p className="mt-4 text-slate-600 text-sm sm:text-base">
-            Read real feedback and success journeys from students who cracked competitive examinations under the mentorship of Director Balram Nokhwal.
-          </p>
-        </div>
+        )}
 
         {/* Rating Metrics & Summary Card */}
-        <div className="bg-gradient-to-r from-blue-900 via-[#0c2b5e] to-[#071c3d] rounded-3xl p-6 sm:p-8 text-white shadow-xl mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center divide-y md:divide-y-0 md:divide-x divide-white/15">
+        <div className="bg-gradient-to-r from-blue-900 via-[#0c2b5e] to-[#071c3d] rounded-2xl sm:rounded-3xl p-4 sm:p-8 text-white shadow-xl mb-6 sm:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 items-center divide-y sm:divide-y-0 sm:divide-x divide-white/15">
             
             {/* Score & Stars */}
-            <div className="text-center md:pr-6 pb-6 md:pb-0">
-              <div className="text-5xl sm:text-6xl font-black text-[#ffc700] tracking-tight">
+            <div className="text-center sm:pr-4 pb-4 sm:pb-0">
+              <div className="text-4xl sm:text-6xl font-black text-[#ffc700] tracking-tight">
                 4.9
               </div>
-              <div className="flex items-center justify-center gap-1 my-2">
+              <div className="flex items-center justify-center gap-1 my-1.5 sm:my-2">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-[#ffc700] fill-[#ffc700]" />
+                  <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-[#ffc700] fill-[#ffc700]" />
                 ))}
               </div>
-              <p className="text-xs text-slate-300 font-semibold uppercase tracking-wider">
+              <p className="text-[11px] sm:text-xs text-slate-300 font-semibold uppercase tracking-wider">
                 Overall Student Rating
               </p>
             </div>
 
             {/* Total Reviews */}
-            <div className="text-center md:px-6 py-6 md:py-0">
-              <div className="text-3xl sm:text-4xl font-black text-white">
+            <div className="text-center sm:px-4 py-4 sm:py-0">
+              <div className="text-2xl sm:text-4xl font-black text-white">
                 850+
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 mt-1 font-medium">
+              <p className="text-xs sm:text-sm text-slate-300 mt-0.5 font-medium">
                 Verified Reviews & Testimonials
               </p>
-              <span className="inline-block mt-2 text-[11px] bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+              <span className="inline-block mt-1.5 text-[10px] sm:text-[11px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/30">
                 100% Genuine Aspirants
               </span>
             </div>
 
             {/* Selections Rate */}
-            <div className="text-center md:px-6 py-6 md:py-0">
-              <div className="text-3xl sm:text-4xl font-black text-white">
+            <div className="text-center sm:px-4 py-4 sm:py-0">
+              <div className="text-2xl sm:text-4xl font-black text-white">
                 1,200+
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 mt-1 font-medium">
-                Government Selections Since 2017
+              <p className="text-xs sm:text-sm text-slate-300 mt-0.5 font-medium">
+                Government Selections
               </p>
-              <span className="inline-block mt-2 text-[11px] bg-amber-500/20 text-amber-300 px-2.5 py-0.5 rounded-full border border-amber-500/30">
+              <span className="inline-block mt-1.5 text-[10px] sm:text-[11px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/30">
                 Top Selection Ratio in Anupgarh
               </span>
             </div>
 
             {/* CTA Button */}
-            <div className="text-center md:pl-6 pt-6 md:pt-0 flex flex-col items-center justify-center">
+            <div className="text-center sm:pl-4 pt-4 sm:pt-0 flex flex-col items-center justify-center">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#ffc700] hover:bg-amber-400 text-[#071c3d] px-6 py-3.5 rounded-xl font-black text-xs sm:text-sm shadow-lg transition transform hover:scale-105"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#ffc700] hover:bg-amber-400 text-[#071c3d] px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl font-black text-xs sm:text-sm shadow-md transition transform hover:scale-105"
                 id="write-review-button"
               >
                 <PlusCircle className="w-4 h-4" />
                 <span>Write a Student Review</span>
               </button>
-              <p className="text-[11px] text-slate-400 mt-2">
+              <p className="text-[10px] sm:text-[11px] text-slate-400 mt-1.5">
                 Share your journey with other students
               </p>
             </div>
@@ -258,18 +264,18 @@ export const ReviewsSection: React.FC = () => {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          <div className="flex items-center gap-1 text-xs font-bold text-slate-500 mr-2">
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none sm:flex-wrap sm:justify-center mb-5 sm:mb-8">
+          <div className="flex items-center gap-1 text-xs font-bold text-slate-500 mr-1 shrink-0">
             <Filter className="w-3.5 h-3.5" />
-            <span>Filter by Stream:</span>
+            <span className="hidden sm:inline">Filter:</span>
           </div>
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition ${
+              className={`px-3 sm:px-4 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition min-h-[34px] ${
                 filterCategory === cat
-                  ? 'bg-[#0c2b5e] text-white shadow-md scale-105'
+                  ? 'bg-[#0c2b5e] text-white shadow-xs'
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               }`}
               id={`review-filter-${cat.toLowerCase()}`}
@@ -280,11 +286,11 @@ export const ReviewsSection: React.FC = () => {
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
           {filteredReviews.map((rev) => (
             <div
               key={rev.id}
-              className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:border-[#0c2b5e]"
+              className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:border-[#0c2b5e]"
             >
               <div>
                 {/* Review Header */}
@@ -356,7 +362,7 @@ export const ReviewsSection: React.FC = () => {
 
         {/* Modal: Write Review */}
         {isModalOpen && (
-          <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-[110] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
             <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in-95">
               
               <button

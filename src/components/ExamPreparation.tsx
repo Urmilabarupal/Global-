@@ -112,45 +112,45 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({
   ];
 
   return (
-    <section id="exams" className="py-16 md:py-24 bg-gradient-to-b from-white via-slate-50 to-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="exams" className="py-6 sm:py-14 md:py-20 bg-gradient-to-b from-white via-slate-50 to-white relative">
+      <div className="max-w-7xl mx-auto px-1 sm:px-4 md:px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 bg-[#ffc700]/20 text-[#071c3d] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider mb-3 border border-[#ffc700]/40">
-            <Sparkles className="w-4 h-4 text-[#ffc700]" />
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
+          <div className="inline-flex items-center gap-2 bg-[#ffc700]/20 text-[#071c3d] px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-wider mb-2 sm:mb-3 border border-[#ffc700]/40">
+            <Sparkles className="w-3.5 h-3.5 text-[#ffc700]" />
             <span>Comprehensive Syllabus & Preparation Framework</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0c2b5e] tracking-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#0c2b5e] tracking-tight leading-tight">
             Subject-Wise Preparation & Coaching Facilities
           </h2>
-          <div className="w-24 h-1.5 bg-[#ffc700] mx-auto mt-3 rounded-full" />
+          <div className="w-20 sm:w-24 h-1.5 bg-[#ffc700] mx-auto mt-2.5 sm:mt-3 rounded-full" />
 
-          <p className="mt-4 text-slate-700 text-base sm:text-lg">
+          <p className="mt-3 sm:mt-4 text-slate-700 text-xs sm:text-base md:text-lg leading-relaxed">
             Major academic streams, structured preparation methodologies, and premier coaching amenities at Global Coaching Classes, Anupgarh.
           </p>
         </div>
 
         {/* 1. TOP POSTER HIGHLIGHT: 5 GUARANTEED FACILITIES */}
-        <div className="mb-14">
-          <div className="bg-gradient-to-r from-[#071c3d] via-[#0c2b5e] to-[#164282] rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+        <div className="mb-8 sm:mb-14">
+          <div className="bg-gradient-to-r from-[#071c3d] via-[#0c2b5e] to-[#164282] rounded-2xl sm:rounded-3xl p-4 sm:p-8 text-white shadow-xl relative overflow-hidden">
             <div className="relative z-10">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-white/10">
                 <div>
-                  <span className="bg-[#ffc700] text-[#071c3d] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span className="bg-[#ffc700] text-[#071c3d] text-[10px] sm:text-xs font-black px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider">
                     5 Core Institute Highlights
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black mt-2 text-white">
+                  <h3 className="text-xl sm:text-3xl font-black mt-1.5 sm:mt-2 text-white leading-tight">
                     Verified Facilities & Academic Features
                   </h3>
                 </div>
-                <div className="text-xs sm:text-sm font-semibold text-amber-300 bg-white/10 px-4 py-2 rounded-2xl border border-white/10 backdrop-blur-sm self-start md:self-auto">
+                <div className="text-xs sm:text-sm font-semibold text-amber-300 bg-white/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl border border-white/10 backdrop-blur-sm self-start md:self-auto">
                   New Batch: Every Monday from 9:00 AM
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
                 {POSTER_FACILITIES_5.map((fac, idx) => {
                   let Icon = ClipboardCheck;
                   if (fac.iconName === 'Video') Icon = Video;
@@ -188,26 +188,26 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({
         </div>
 
         {/* 2. INTERACTIVE STREAM EXPLORER (CET, REET, SSC, RS-CIT, POLICE) */}
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden mb-16">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl overflow-hidden mb-8 sm:mb-16">
           
           {/* Stream Tabs Header */}
-          <div className="p-4 sm:p-6 bg-slate-900 text-white border-b border-slate-800">
-            <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
+          <div className="p-3.5 sm:p-6 bg-slate-900 text-white border-b border-slate-800">
+            <div className="flex items-center justify-between flex-wrap gap-2 sm:gap-3 mb-3 sm:mb-4">
               <div>
-                <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">
+                <span className="text-[10px] sm:text-xs font-bold text-amber-400 uppercase tracking-widest">
                   Core Career Streams
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black text-white">
+                <h3 className="text-lg sm:text-2xl font-black text-white leading-tight">
                   Select a Course to View Subjects & Preparation Strategy
                 </h3>
               </div>
-              <div className="text-xs font-bold text-slate-300 bg-white/10 px-3 py-1.5 rounded-xl">
+              <div className="text-[11px] sm:text-xs font-bold text-slate-300 bg-white/10 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl">
                 Every Monday & Wednesday Test Series
               </div>
             </div>
 
             {/* Stream Selector Buttons */}
-            <div className="flex items-center gap-2 pt-1 overflow-x-auto pb-2 scrollbar-none sm:flex-wrap">
+            <div className="flex items-center gap-1.5 sm:gap-2 pt-1 overflow-x-auto pb-2 scrollbar-none sm:flex-wrap">
               {POSTER_EXAM_PREPARATIONS.map((stream) => {
                 const isActive = selectedStreamId === stream.id;
                 return (
@@ -217,7 +217,7 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({
                       setSelectedStreamId(stream.id);
                       setExpandedSubjectIndex(0);
                     }}
-                    className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-black text-xs sm:text-sm transition flex items-center gap-1.5 sm:gap-2 flex-shrink-0 min-h-[40px] ${
+                    className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-black text-xs sm:text-sm transition flex items-center gap-1.5 sm:gap-2 flex-shrink-0 min-h-[38px] sm:min-h-[40px] ${
                       isActive 
                         ? 'bg-[#ffc700] text-[#071c3d] shadow-lg scale-100 sm:scale-105' 
                         : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
@@ -232,40 +232,40 @@ export const ExamPreparation: React.FC<ExamPreparationProps> = ({
           </div>
 
           {/* Active Stream Content */}
-          <div className="p-4 sm:p-6 md:p-8">
+          <div className="p-3.5 sm:p-6 md:p-8">
             
             {/* Stream Summary Banner */}
-            <div className="bg-blue-50/70 border border-blue-200 rounded-2xl p-4 sm:p-5 mb-6 sm:mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="bg-blue-50/70 border border-blue-200 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 mb-5 sm:mb-8 flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
               <div className="min-w-0 flex-1">
-                <div className="inline-block bg-[#0c2b5e] text-white text-[11px] font-black px-2.5 py-0.5 rounded uppercase mb-1.5">
+                <div className="inline-block bg-[#0c2b5e] text-white text-[10px] sm:text-[11px] font-black px-2 py-0.5 rounded uppercase mb-1 sm:mb-1.5">
                   {activeStream.badge}
                 </div>
-                <h4 className="text-xl sm:text-2xl font-black text-[#0c2b5e] break-words">
+                <h4 className="text-lg sm:text-2xl font-black text-[#0c2b5e] break-words leading-tight">
                   {activeStream.nameHindi}
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-700 font-medium mt-1">
+                <p className="text-xs sm:text-sm text-slate-700 font-medium mt-1 leading-relaxed">
                   {activeStream.slogan}
                 </p>
-                <div className="flex flex-wrap gap-2 sm:gap-4 mt-3 text-xs text-slate-600 font-semibold">
-                  <span className="flex items-center gap-1.5 bg-white/70 px-2.5 py-1 rounded-lg border border-blue-100">
-                    <Clock className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
+                <div className="flex flex-wrap gap-1.5 sm:gap-3 mt-2.5 sm:mt-3 text-[11px] sm:text-xs text-slate-600 font-semibold">
+                  <span className="flex items-center gap-1 bg-white/80 px-2 py-1 rounded-lg border border-blue-100">
+                    <Clock className="w-3 h-3 text-blue-600 flex-shrink-0" />
                     <span>Duration: {activeStream.duration}</span>
                   </span>
-                  <span className="flex items-center gap-1.5 bg-white/70 px-2.5 py-1 rounded-lg border border-blue-100">
-                    <Calendar className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
+                  <span className="flex items-center gap-1 bg-white/80 px-2 py-1 rounded-lg border border-blue-100">
+                    <Calendar className="w-3 h-3 text-amber-600 flex-shrink-0" />
                     <span>Schedule: {activeStream.batchSchedule}</span>
                   </span>
-                  <span className="flex items-center gap-1.5 bg-white/70 px-2.5 py-1 rounded-lg border border-blue-100">
-                    <GraduationCap className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+                  <span className="flex items-center gap-1 bg-white/80 px-2 py-1 rounded-lg border border-blue-100">
+                    <GraduationCap className="w-3 h-3 text-emerald-600 flex-shrink-0" />
                     <span>Eligibility: {activeStream.eligibility}</span>
                   </span>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-full md:w-auto">
+              <div className="flex-shrink-0 w-full md:w-auto pt-2 sm:pt-0">
                 <button
                   onClick={() => onExamClick(activeStream.name)}
-                  className="w-full md:w-auto px-5 sm:px-6 py-3 bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center gap-2 min-h-[44px]"
+                  className="w-full md:w-auto px-4 sm:px-6 py-2.5 sm:py-3 bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center gap-2 min-h-[42px]"
                 >
                   <span>Enroll in this Batch</span>
                   <ArrowRight className="w-4 h-4" />

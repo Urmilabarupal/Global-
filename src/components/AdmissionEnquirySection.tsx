@@ -2,27 +2,27 @@ import React, { useState } from 'react';
 import { 
   Send, 
   CheckCircle2, 
-  MessageCircle, 
-  PhoneCall, 
   Sparkles, 
   User, 
   Phone, 
   BookOpen, 
-  FileText,
   AlertCircle 
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { AdmissionEnquiry, InstituteSettings } from '../types';
 
 interface AdmissionEnquirySectionProps {
   settings: InstituteSettings;
   selectedCoursePrefill?: string;
   onNewEnquirySubmitted: (enquiry: AdmissionEnquiry) => void;
+  hideHeader?: boolean;
 }
 
 export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = ({
   settings,
   selectedCoursePrefill = '',
-  onNewEnquirySubmitted
+  onNewEnquirySubmitted,
+  hideHeader = false
 }) => {
   const [formData, setFormData] = useState({
     studentName: '',
@@ -37,16 +37,9 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
   const [submittedEnquiry, setSubmittedEnquiry] = useState<AdmissionEnquiry | null>(null);
   const [errorMsg, setErrorMsg] = useState('');
 
-  // Update course when prefill changes
-  React.useEffect(() => {
-    if (selectedCoursePrefill) {
-      setFormData(prev => ({ ...prev, courseInterested: selectedCoursePrefill }));
-    }
-  }, [selectedCoursePrefill]);
-
   const courseOptions = [
     'CET (Senior Secondary / Graduate)',
-    'REET Level-1 (Primary Classes 1-5)',
+    'REET Level-1 (Primary Teacher)',
     'REET Level-2 (SST / Maths-Science)',
     'SSC GD / CGL / CHSL',
     'Railway (NTPC / Group D / ALP)',
@@ -64,7 +57,6 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
     e.preventDefault();
     setErrorMsg('');
 
-    // Input validation & sanitization
     const trimmedName = formData.studentName.trim();
     const cleanMobile = formData.mobile.replace(/[^0-9]/g, '');
 
@@ -95,47 +87,46 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
     setSubmitted(true);
   };
 
-  const handleWhatsAppSend = () => {
-    const text = `Hello Global Coaching Classes Anupgarh!%0A%0A*Online Admission Enquiry:*%0A👤 *Student Name:* ${formData.studentName}%0A👨‍👦 *Father's Name:* ${formData.fatherName || 'N/A'}%0A📱 *Mobile:* ${formData.mobile}%0A📚 *Course:* ${formData.courseInterested}%0A💬 *Message:* ${formData.message || 'Looking for admission details in upcoming batch.'}`;
-    window.open(`https://wa.me/91${settings.whatsappNumber}?text=${text}`, '_blank');
-  };
+  const whatsappText = `Hello Global Coaching Classes Anupgarh!%0A%0A*Online Admission Enquiry:*%0A👤 *Student Name:* ${formData.studentName || 'Student'}%0A👨‍👦 *Father's Name:* ${formData.fatherName || 'N/A'}%0A📱 *Mobile:* ${formData.mobile || 'N/A'}%0A📚 *Course:* ${formData.courseInterested}%0A💬 *Message:* ${formData.message || 'Looking for admission details in upcoming batch.'}`;
 
   return (
-    <section id="admission" className="py-16 md:py-24 bg-gradient-to-b from-white via-slate-50 to-blue-50/50 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+    <section id="admission" className={`${hideHeader ? 'py-1 sm:py-4' : 'py-10 sm:py-16 md:py-24 bg-gradient-to-b from-white via-slate-50 to-blue-50/50'} relative`}>
+      <div className="max-w-4xl mx-auto px-1 sm:px-4 md:px-6">
         
         {/* Section Title */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>Limited Seats Available • Admissions Open</span>
+        {!hideHeader && (
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 px-2">
+            <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+              <span>Limited Seats Available • Admissions Open</span>
+            </div>
+
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#0c2b5e] tracking-tight leading-tight">
+              Online Admission & Enquiry Form
+            </h2>
+            <div className="w-16 sm:w-20 h-1.5 bg-[#ffc700] mx-auto mt-2 sm:mt-3 rounded-full" />
+
+            <p className="mt-3 text-slate-600 text-xs sm:text-base leading-relaxed">
+              Reserve your seat for upcoming batches or weekly test series by submitting the form below.
+              Our academic counsellor will contact you shortly.
+            </p>
           </div>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0c2b5e] tracking-tight">
-            Online Admission & Enquiry Form
-          </h2>
-          <div className="w-20 h-1.5 bg-[#ffc700] mx-auto mt-3 rounded-full" />
-
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
-            Reserve your seat for upcoming batches or weekly test series by submitting the form below.
-            Our academic counsellor will contact you shortly.
-          </p>
-        </div>
+        )}
 
         {/* Main Form Box */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-2xl border-2 border-slate-200/80 relative">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-10 shadow-lg border border-slate-200 relative">
           
           {submitted ? (
-            <div className="text-center py-8 space-y-5 animate-in zoom-in-95 duration-300">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center shadow-inner">
-                <CheckCircle2 className="w-10 h-10" />
+            <div className="text-center py-6 sm:py-8 space-y-4 sm:space-y-5 animate-in zoom-in-95 duration-300">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center shadow-inner">
+                <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" />
               </div>
 
-              <h3 className="text-2xl font-black text-slate-900">
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
                 Thank you! Your enquiry has been received successfully.
               </h3>
 
-              <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl max-w-md mx-auto text-left text-xs sm:text-sm text-slate-700 space-y-1">
+              <div className="bg-emerald-50 border border-emerald-200 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl max-w-md mx-auto text-left text-xs sm:text-sm text-slate-700 space-y-1">
                 <div><strong>Student Name:</strong> {submittedEnquiry?.studentName}</div>
                 <div><strong>Course:</strong> {submittedEnquiry?.courseInterested}</div>
                 <div><strong>Mobile:</strong> {submittedEnquiry?.mobile}</div>
@@ -146,14 +137,16 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
                 Our counsellors from Global Coaching Classes Anupgarh will contact you on your registered mobile number shortly.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center gap-3 pt-3">
-                <button
-                  onClick={handleWhatsAppSend}
-                  className="bg-[#15803d] hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow transition flex items-center gap-2"
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 pt-2">
+                <a
+                  href={`https://wa.me/91${settings.whatsappNumber}?text=${whatsappText}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl shadow transition flex items-center justify-center gap-2"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
                   <span>Send Details via WhatsApp</span>
-                </button>
+                </a>
 
                 <button
                   onClick={() => {
@@ -167,14 +160,14 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
                       message: ''
                     });
                   }}
-                  className="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm px-4 py-3 rounded-xl transition"
+                  className="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm px-4 py-2.5 sm:py-3 rounded-xl transition text-center"
                 >
                   Submit Another Enquiry
                 </button>
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5" id="admission-enquiry-form">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" id="admission-enquiry-form">
               
               {errorMsg && (
                 <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-red-700 flex items-center gap-2">
@@ -183,7 +176,7 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
                 </div>
               )}
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 {/* Student Name */}
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">
@@ -197,7 +190,7 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
                       placeholder="Enter student's full name..."
                       value={formData.studentName}
                       onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
-                      className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition"
+                      className="w-full pl-10 pr-4 py-2 sm:py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition"
                       id="input-student-name"
                     />
                   </div>
@@ -215,7 +208,7 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
                       placeholder="Enter father's name..."
                       value={formData.fatherName}
                       onChange={(e) => setFormData({ ...formData, fatherName: e.target.value })}
-                      className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition"
+                      className="w-full pl-10 pr-4 py-2 sm:py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition"
                       id="input-father-name"
                     />
                   </div>
@@ -235,7 +228,7 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
                       placeholder="10-digit mobile number..."
                       value={formData.mobile}
                       onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                      className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition font-mono"
+                      className="w-full pl-10 pr-4 py-2 sm:py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition font-mono"
                       id="input-mobile-number"
                     />
                   </div>
@@ -254,7 +247,7 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
                       placeholder="Additional phone number..."
                       value={formData.altMobile}
                       onChange={(e) => setFormData({ ...formData, altMobile: e.target.value })}
-                      className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition font-mono"
+                      className="w-full pl-10 pr-4 py-2 sm:py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition font-mono"
                       id="input-alt-mobile"
                     />
                   </div>
@@ -271,7 +264,7 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
                   <select
                     value={formData.courseInterested}
                     onChange={(e) => setFormData({ ...formData, courseInterested: e.target.value })}
-                    className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition"
+                    className="w-full pl-10 pr-4 py-2 sm:py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition"
                     id="select-course-interested"
                   >
                     {courseOptions.map((opt) => (
@@ -291,34 +284,35 @@ export const AdmissionEnquirySection: React.FC<AdmissionEnquirySectionProps> = (
                   placeholder="Specify batch timing preferences, previous exam preparation background, or any query..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full p-3.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition"
+                  className="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#0c2b5e] focus:bg-white transition"
                   id="textarea-query-message"
                 />
               </div>
 
               {/* Submit Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+              <div className="pt-2 flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3">
                 <button
                   type="submit"
-                  className="w-full sm:flex-1 py-3.5 px-6 bg-gradient-to-r from-[#dc2626] to-[#b91c1c] hover:from-[#b91c1c] hover:to-[#991b1b] text-white font-bold text-sm sm:text-base rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                  className="w-full sm:flex-1 py-3 sm:py-3.5 px-5 bg-gradient-to-r from-[#dc2626] to-[#b91c1c] hover:from-[#b91c1c] hover:to-[#991b1b] text-white font-bold text-xs sm:text-base rounded-xl shadow-md transition flex items-center justify-center gap-2"
                   id="submit-enquiry-btn"
                 >
                   <Send className="w-4 h-4 text-amber-300" />
                   <span>Submit Admission Enquiry</span>
                 </button>
 
-                <button
-                  type="button"
-                  onClick={handleWhatsAppSend}
-                  className="w-full sm:w-auto py-3.5 px-5 bg-[#15803d] hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow transition flex items-center justify-center gap-2"
+                <a
+                  href={`https://wa.me/91${settings.whatsappNumber}?text=${whatsappText}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto py-3 sm:py-3.5 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl shadow transition flex items-center justify-center gap-2"
                   id="submit-whatsapp-direct-btn"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
                   <span>Send via WhatsApp</span>
-                </button>
+                </a>
               </div>
 
-              <div className="text-center text-[11px] text-slate-400">
+              <div className="text-center text-[10px] sm:text-[11px] text-slate-400">
                 🔒 Your contact details are strictly confidential and used solely for academic counseling.
               </div>
             </form>

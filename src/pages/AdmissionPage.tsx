@@ -53,15 +53,15 @@ export const AdmissionPage: React.FC<AdmissionPageProps> = ({
         onBackToHome={onBackToHome}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-10">
         
         {/* 4 Step Process Card */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-6">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-10 border border-slate-200 shadow-sm space-y-4 sm:space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-1">
-            <span className="text-xs font-black uppercase text-amber-600 tracking-wider">
+            <span className="text-[10px] sm:text-xs font-black uppercase text-amber-600 tracking-wider">
               Simple & Transparent
             </span>
-            <h3 className="text-2xl font-black text-[#0c2b5e]">
+            <h3 className="text-xl sm:text-2xl font-black text-[#0c2b5e]">
               4-Step Admission Journey
             </h3>
             <p className="text-xs sm:text-sm text-slate-500">
@@ -69,23 +69,24 @@ export const AdmissionPage: React.FC<AdmissionPageProps> = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {steps.map((st, sidx) => (
-              <div key={sidx} className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 relative">
-                <div className="text-2xl font-black text-[#0c2b5e]/20">{st.num}</div>
-                <h4 className="font-bold text-slate-900 text-sm">{st.title}</h4>
-                <p className="text-xs text-slate-600 leading-relaxed">{st.desc}</p>
+              <div key={sidx} className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5 sm:space-y-2 relative">
+                <div className="text-xl sm:text-2xl font-black text-[#0c2b5e]/20">{st.num}</div>
+                <h4 className="font-bold text-slate-900 text-xs sm:text-sm">{st.title}</h4>
+                <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">{st.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Admission Form */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 md:p-8 border border-slate-200 shadow-sm">
           <AdmissionEnquirySection
             settings={settings}
             selectedCoursePrefill={coursePrefill}
             onNewEnquirySubmitted={onNewEnquirySubmitted}
+            hideHeader={true}
           />
         </div>
 

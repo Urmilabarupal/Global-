@@ -50,8 +50,9 @@ export const FacultySection: React.FC<FacultySectionProps> = ({
                 {/* Photo Col */}
                 <div className="md:col-span-5 relative aspect-[4/5] md:aspect-auto overflow-hidden bg-slate-100 min-h-[320px]">
                   <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=85"
+                    src="/images/balram-nokhwal-office.png"
                     alt={member.name}
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700"
                     loading="lazy"
                   />
@@ -66,7 +67,7 @@ export const FacultySection: React.FC<FacultySectionProps> = ({
 
                   {/* Experience Tag */}
                   <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-[#0c2b5e] text-xs font-bold px-3 py-1 rounded-xl shadow">
-                    {member.experience || "10+ Years Experience"}
+                    6 Years of Teaching Experience
                   </div>
                 </div>
 
@@ -84,15 +85,18 @@ export const FacultySection: React.FC<FacultySectionProps> = ({
 
                     <div className="text-sm font-bold text-slate-700 mt-1 flex items-center gap-1.5">
                       <BookOpen className="w-4 h-4 text-[#dc2626]" />
-                      <span>{member.subject || "Competitive Exam Mentor & GS Specialist"}</span>
+                      <span>Hindi & Geography Specialist • Competitive Exam Mentor</span>
                     </div>
 
-                    <div className="text-xs font-semibold text-slate-500 mt-1">
-                      Qualification: M.A., B.Ed, UGC-NET Qualified
+                    <div className="text-xs font-semibold text-slate-600 mt-1.5 flex flex-wrap items-center gap-1.5">
+                      <span className="px-2 py-0.5 bg-blue-50 text-[#0c2b5e] rounded font-bold">B.Ed.</span>
+                      <span className="px-2 py-0.5 bg-blue-50 text-[#0c2b5e] rounded font-bold">M.A. in Hindi</span>
+                      <span className="px-2 py-0.5 bg-blue-50 text-[#0c2b5e] rounded font-bold">M.A. in Geography</span>
+                      <span className="px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded font-bold">UGC NET & SET Qualified</span>
                     </div>
 
                     <p className="mt-4 text-slate-600 text-sm leading-relaxed">
-                      {member.bio || "Renowned mentor and educator in Anupgarh who has guided hundreds of rural and urban aspirants into government services. Known for disciplined teaching, individual doubt guidance, and comprehensive test series."}
+                      {member.bio || "Renowned mentor and educator in Anupgarh with dual post-graduations in Hindi and Geography, along with UGC NET and SET qualifications. Known for disciplined teaching, individual doubt guidance, and comprehensive test series."}
                     </p>
 
                     <div className="mt-5 grid grid-cols-2 gap-3 text-xs">

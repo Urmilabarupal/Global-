@@ -541,11 +541,11 @@ export const INITIAL_FACULTY: FacultyMember[] = [
     id: "director-balram",
     name: "Balram Nokhwal",
     role: "Founder & Managing Director",
-    subject: "Competitive Exam Mentor & GS Specialist",
-    experience: "10+ Years Teaching Experience",
-    qualification: "M.A., B.Ed, UGC-NET Qualified",
-    bio: "Renowned mentor and educator in Anupgarh who has guided hundreds of rural and urban aspirants into government services. Known for disciplined teaching, individual doubt guidance, and comprehensive test series.",
-    photoUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=85",
+    subject: "Competitive Exam Mentor, Hindi & Geography Specialist",
+    experience: "6 Years of Teaching Experience",
+    qualification: "B.Ed. | M.A. in Hindi | M.A. in Geography | UGC NET & SET Qualified",
+    bio: "Renowned mentor and educator in Anupgarh with dual post-graduations in Hindi and Geography, along with UGC NET and SET qualifications. Known for disciplined teaching, individual doubt guidance, and comprehensive test series.",
+    photoUrl: "/images/balram-nokhwal-office.png",
     isDirector: true
   }
 ];

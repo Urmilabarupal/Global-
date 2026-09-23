@@ -65,7 +65,7 @@ export const AdmissionPopupModal: React.FC<AdmissionPopupModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-300"
+      className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-300"
       onClick={handleClose}
       role="dialog"
       aria-modal="true"
