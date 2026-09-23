@@ -4,9 +4,7 @@ import {
   Phone, 
   Mail, 
   MessageCircle, 
-  Shield, 
   Sparkles, 
-  GraduationCap, 
   ArrowUp, 
   Heart,
   Instagram 
@@ -232,14 +230,6 @@ export const Footer: React.FC<FooterProps> = ({
 
           <div className="flex items-center gap-4 flex-wrap">
             <span className="font-semibold text-slate-700">Director: Balram Nokhwal</span>
-            <span className="text-slate-300">•</span>
-            <button
-              onClick={onOpenAdmin}
-              className="text-slate-500 hover:text-[#0c2b5e] transition flex items-center gap-1 font-medium"
-            >
-              <Shield className="w-3.5 h-3.5 text-slate-400" />
-              <span>Admin Panel</span>
-            </button>
             <span className="text-slate-300">•</span>
             <button
               onClick={scrollToTop}

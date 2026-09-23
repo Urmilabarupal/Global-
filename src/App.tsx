@@ -416,10 +416,12 @@ export default function App() {
 
           {/* 5. Comprehensive Courses Section */}
           <CoursesSection
-            courses={courses}
-            onSelectCourse={(course) => handleOpenCourseDetail(course)}
-            onEnquireCourse={(courseName) => handleOpenAdmissionWithCourse(courseName)}
-          />
+  courses={courses}
+  maxCourses={6}
+  onViewAllCourses={() => handleNavigate('courses')}
+  onSelectCourse={(course) => handleOpenCourseDetail(course)}
+  onEnquireCourse={(courseName) => handleOpenAdmissionWithCourse(courseName)}
+  />
 
           {/* 6. About Institute Section */}
           <AboutSection

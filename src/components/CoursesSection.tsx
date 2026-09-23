@@ -1,26 +1,21 @@
 import React, { useState, useMemo } from 'react';
-import { 
-  Search, 
-  GraduationCap, 
-  Clock, 
-  ArrowRight, 
-  Sparkles, 
-  Filter, 
-  CheckCircle, 
-  Send 
-} from 'lucide-react';
+import { Search, GraduationCap, ArrowRight, Sparkles } from 'lucide-react';
 import { Course, CourseCategory } from '../types';
 
 interface CoursesSectionProps {
   courses: Course[];
   onSelectCourse: (course: Course) => void;
   onEnquireCourse: (courseName: string) => void;
+  maxCourses?: number;
+  onViewAllCourses?: () => void;
 }
 
 export const CoursesSection: React.FC<CoursesSectionProps> = ({
   courses,
   onSelectCourse,
-  onEnquireCourse
+  onEnquireCourse,
+  maxCourses,
+  onViewAllCourses
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<CourseCategory>('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -121,7 +116,7 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredCourses.map((course, index) => {
+            {filteredCourses.slice(0, maxCourses ?? filteredCourses.length).map((course, index) => {
               const badgeColors = {
                 orange: 'bg-orange-500 text-white',
                 green: 'bg-emerald-600 text-white',
@@ -195,18 +190,21 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
                       <ArrowRight className="w-3.5 h-3.5 text-amber-300" />
                     </button>
 
-                    <button
-                      onClick={() => onEnquireCourse(course.name)}
-                      className="py-2.5 px-3.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs font-bold transition flex items-center justify-center gap-1 shadow-sm"
-                      id={`course-enquire-${course.id}`}
-                    >
-                      <Send className="w-3 h-3" />
-                      <span>Enquire</span>
-                    </button>
                   </div>
                 </div>
               );
             })}
+          </div>
+        )}
+
+        {maxCourses && filteredCourses.length > maxCourses && onViewAllCourses && (
+          <div className="mt-8 text-center">
+            <button
+              onClick={onViewAllCourses}
+              className="inline-flex items-center gap-2 rounded-xl bg-[#0c2b5e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#071c3d]"
+            >
+              All Courses <ArrowRight className="h-4 w-4 text-amber-300" />
+            </button>
           </div>
         )}
 
