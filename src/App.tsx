@@ -210,6 +210,49 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, [courses]);
 
+  // Dynamic Google SEO & Meta Title/Description updates based on active route
+  useEffect(() => {
+    let pageTitle = "Global Coaching Classes & Computer Education Anupgarh | Best Coaching in Anupgarh";
+    let metaDesc = "Global Coaching Classes Anupgarh offers premier prep for CET, REET, Rajasthan Police, SSC, Railways & RS-CIT under Director Balram Nokhwal. Join 3 days free demo classes.";
+
+    if (currentPage === 'course-detail' && currentCourse) {
+      pageTitle = `${currentCourse.name} Coaching in Anupgarh | Global Coaching Classes`;
+      metaDesc = `Complete ${currentCourse.name} preparation in Anupgarh with ${currentCourse.duration || 'regular classes'}, printed study notes, and Monday-Wednesday OMR tests under Director Balram Nokhwal.`;
+    } else if (currentPage === 'courses') {
+      pageTitle = "All Competitive Exam Courses & RS-CIT | Global Coaching Classes Anupgarh";
+      metaDesc = "Explore all competitive examination programs including CET, REET, Police, SSC, Railways, Patwari, and RS-CIT computer education in Anupgarh.";
+    } else if (currentPage === 'batch') {
+      pageTitle = "New Upcoming Batches & Schedule | Global Coaching Classes Anupgarh";
+      metaDesc = "Check upcoming classroom batch dates, morning/evening schedules, and fee structures at Global Coaching Classes Anupgarh. Free 3-day demo classes.";
+    } else if (currentPage === 'faculty') {
+      pageTitle = "Expert Faculty & Director Balram Nokhwal | Global Coaching Classes Anupgarh";
+      metaDesc = "Meet Director Balram Nokhwal (B.Ed., M.A. in Hindi & Geography, UGC NET & SET Qualified) and our dedicated educators with 6 Years of Teaching Experience.";
+    } else if (currentPage === 'test-series') {
+      pageTitle = "OMR Mock Test Series (Monday & Wednesday) | Global Coaching Classes Anupgarh";
+      metaDesc = "Attend bi-weekly Monday & Wednesday OMR test series mirroring real RPSC/RSMSSB exam conditions with personalized rank evaluation in Anupgarh.";
+    } else if (currentPage === 'about') {
+      pageTitle = "About Us & Institute History | Global Coaching Classes Anupgarh";
+      metaDesc = "Learn about Global Coaching Classes & Computer Education, Anupgarh's educational vision, air-cooled classrooms, typing lab, and Director Balram Nokhwal.";
+    } else if (currentPage === 'gallery') {
+      pageTitle = "Campus & Student Event Gallery | Global Coaching Classes Anupgarh";
+      metaDesc = "View photos of classroom sessions, computer typing lab, student felicitation events, and campus facilities in Anupgarh.";
+    } else if (currentPage === 'faq') {
+      pageTitle = "Frequently Asked Questions (FAQs) | Global Coaching Classes Anupgarh";
+      metaDesc = "Find answers to questions about admission, 3-day demo classes, course fees, test series schedule, and study materials in Anupgarh.";
+    } else if (currentPage === 'admission' || currentPage === 'contact') {
+      pageTitle = "Admission Enquiry & 3-Day Free Demo Pass | Global Coaching Classes Anupgarh";
+      metaDesc = "Apply for 3-day free demo classes or contact Director Balram Nokhwal at Opposite Govt Hospital, Anupgarh. Phone: 94130-94840.";
+    }
+
+    document.title = pageTitle;
+    const descElem = document.querySelector('meta[name="description"]');
+    if (descElem) descElem.setAttribute('content', metaDesc);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', metaDesc);
+  }, [currentPage, currentCourse]);
+
   // Page Navigation Handler
   const handleNavigate = (pageId: string) => {
     if (pageId.startsWith('course-')) {

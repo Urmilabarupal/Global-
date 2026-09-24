@@ -1,0 +1,19 @@
+{
+  "short_name": "Global Coaching",
+  "name": "Global Coaching Classes & Computer Education Anupgarh",
+  "description": "Premier competitive examination coaching and certified computer training institute in Anupgarh under Director Balram Nokhwal.",
+  "icons": [
+    {
+      "src": "/images/global-coaching-logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#0c2b5e",
+  "display": "standalone",
+  "orientation": "portrait",
+  "categories": ["education", "productivity"]
+}
